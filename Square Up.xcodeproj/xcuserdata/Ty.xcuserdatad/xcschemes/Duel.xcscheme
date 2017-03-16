@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "105CE2101E7A4D8B00FF031C"
-               BuildableName = "Duel.app"
-               BlueprintName = "Duel"
-               ReferencedContainer = "container:Duel.xcodeproj">
+               BuildableName = "Square Up.app"
+               BlueprintName = "Square Up"
+               ReferencedContainer = "container:Square Up.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "105CE22A1E7A4D8C00FF031C"
-               BuildableName = "DuelTests.xctest"
-               BlueprintName = "DuelTests"
-               ReferencedContainer = "container:Duel.xcodeproj">
+               BuildableName = "Square UpTests.xctest"
+               BlueprintName = "Square UpTests"
+               ReferencedContainer = "container:Square Up.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "105CE2351E7A4D8C00FF031C"
-               BuildableName = "DuelUITests.xctest"
-               BlueprintName = "DuelUITests"
-               ReferencedContainer = "container:Duel.xcodeproj">
+               BuildableName = "Square UpUITests.xctest"
+               BlueprintName = "Square UpUITests"
+               ReferencedContainer = "container:Square Up.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "105CE2101E7A4D8B00FF031C"
-            BuildableName = "Duel.app"
-            BlueprintName = "Duel"
-            ReferencedContainer = "container:Duel.xcodeproj">
+            BuildableName = "Square Up.app"
+            BlueprintName = "Square Up"
+            ReferencedContainer = "container:Square Up.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "105CE2101E7A4D8B00FF031C"
-            BuildableName = "Duel.app"
-            BlueprintName = "Duel"
-            ReferencedContainer = "container:Duel.xcodeproj">
+            BuildableName = "Square Up.app"
+            BlueprintName = "Square Up"
+            ReferencedContainer = "container:Square Up.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "105CE2101E7A4D8B00FF031C"
-            BuildableName = "Duel.app"
-            BlueprintName = "Duel"
-            ReferencedContainer = "container:Duel.xcodeproj">
+            BuildableName = "Square Up.app"
+            BlueprintName = "Square Up"
+            ReferencedContainer = "container:Square Up.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

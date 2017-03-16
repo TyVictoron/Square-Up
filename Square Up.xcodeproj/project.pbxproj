@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		105CE2151E7A4D8B00FF031C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE2141E7A4D8B00FF031C /* AppDelegate.swift */; };
-		105CE2171E7A4D8B00FF031C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 105CE2161E7A4D8B00FF031C /* GameScene.sks */; };
-		105CE2191E7A4D8C00FF031C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 105CE2181E7A4D8C00FF031C /* Actions.sks */; };
-		105CE21B1E7A4D8C00FF031C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE21A1E7A4D8C00FF031C /* GameScene.swift */; };
-		105CE21D1E7A4D8C00FF031C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE21C1E7A4D8C00FF031C /* GameViewController.swift */; };
 		105CE2201E7A4D8C00FF031C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105CE21E1E7A4D8C00FF031C /* Main.storyboard */; };
 		105CE2221E7A4D8C00FF031C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105CE2211E7A4D8C00FF031C /* Assets.xcassets */; };
 		105CE2251E7A4D8C00FF031C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105CE2231E7A4D8C00FF031C /* LaunchScreen.storyboard */; };
 		105CE2301E7A4D8C00FF031C /* DuelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE22F1E7A4D8C00FF031C /* DuelTests.swift */; };
 		105CE23B1E7A4D8C00FF031C /* DuelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE23A1E7A4D8C00FF031C /* DuelUITests.swift */; };
+		105CE2491E7A54E000FF031C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE2481E7A54E000FF031C /* ViewController.swift */; };
+		105CE24B1E7A54ED00FF031C /* DuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE24A1E7A54ED00FF031C /* DuelViewController.swift */; };
+		105CE24D1E7A552000FF031C /* unownstudioslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 105CE24C1E7A552000FF031C /* unownstudioslogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,22 +36,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		105CE2111E7A4D8B00FF031C /* Duel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		105CE2111E7A4D8B00FF031C /* Square Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Square Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		105CE2141E7A4D8B00FF031C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		105CE2161E7A4D8B00FF031C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		105CE2181E7A4D8C00FF031C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		105CE21A1E7A4D8C00FF031C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		105CE21C1E7A4D8C00FF031C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		105CE21F1E7A4D8C00FF031C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		105CE2211E7A4D8C00FF031C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105CE2241E7A4D8C00FF031C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105CE2261E7A4D8C00FF031C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		105CE22B1E7A4D8C00FF031C /* DuelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105CE22B1E7A4D8C00FF031C /* Square UpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Square UpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		105CE22F1E7A4D8C00FF031C /* DuelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuelTests.swift; sourceTree = "<group>"; };
 		105CE2311E7A4D8C00FF031C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		105CE2361E7A4D8C00FF031C /* DuelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105CE2361E7A4D8C00FF031C /* Square UpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Square UpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		105CE23A1E7A4D8C00FF031C /* DuelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuelUITests.swift; sourceTree = "<group>"; };
 		105CE23C1E7A4D8C00FF031C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105CE2481E7A54E000FF031C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		105CE24A1E7A54ED00FF031C /* DuelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuelViewController.swift; sourceTree = "<group>"; };
+		105CE24C1E7A552000FF031C /* unownstudioslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unownstudioslogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +84,7 @@
 				105CE2131E7A4D8B00FF031C /* Duel */,
 				105CE22E1E7A4D8C00FF031C /* DuelTests */,
 				105CE2391E7A4D8C00FF031C /* DuelUITests */,
+				105CE24C1E7A552000FF031C /* unownstudioslogo.png */,
 				105CE2121E7A4D8B00FF031C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,9 +92,9 @@
 		105CE2121E7A4D8B00FF031C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				105CE2111E7A4D8B00FF031C /* Duel.app */,
-				105CE22B1E7A4D8C00FF031C /* DuelTests.xctest */,
-				105CE2361E7A4D8C00FF031C /* DuelUITests.xctest */,
+				105CE2111E7A4D8B00FF031C /* Square Up.app */,
+				105CE22B1E7A4D8C00FF031C /* Square UpTests.xctest */,
+				105CE2361E7A4D8C00FF031C /* Square UpUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,10 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				105CE2141E7A4D8B00FF031C /* AppDelegate.swift */,
-				105CE2161E7A4D8B00FF031C /* GameScene.sks */,
-				105CE2181E7A4D8C00FF031C /* Actions.sks */,
-				105CE21A1E7A4D8C00FF031C /* GameScene.swift */,
-				105CE21C1E7A4D8C00FF031C /* GameViewController.swift */,
+				105CE2481E7A54E000FF031C /* ViewController.swift */,
+				105CE24A1E7A54ED00FF031C /* DuelViewController.swift */,
 				105CE21E1E7A4D8C00FF031C /* Main.storyboard */,
 				105CE2211E7A4D8C00FF031C /* Assets.xcassets */,
 				105CE2231E7A4D8C00FF031C /* LaunchScreen.storyboard */,
@@ -137,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		105CE2101E7A4D8B00FF031C /* Duel */ = {
+		105CE2101E7A4D8B00FF031C /* Square Up */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 105CE23F1E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Duel" */;
+			buildConfigurationList = 105CE23F1E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Square Up" */;
 			buildPhases = (
 				105CE20D1E7A4D8B00FF031C /* Sources */,
 				105CE20E1E7A4D8B00FF031C /* Frameworks */,
@@ -149,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = Duel;
+			name = "Square Up";
 			productName = Duel;
-			productReference = 105CE2111E7A4D8B00FF031C /* Duel.app */;
+			productReference = 105CE2111E7A4D8B00FF031C /* Square Up.app */;
 			productType = "com.apple.product-type.application";
 		};
-		105CE22A1E7A4D8C00FF031C /* DuelTests */ = {
+		105CE22A1E7A4D8C00FF031C /* Square UpTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 105CE2421E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "DuelTests" */;
+			buildConfigurationList = 105CE2421E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Square UpTests" */;
 			buildPhases = (
 				105CE2271E7A4D8C00FF031C /* Sources */,
 				105CE2281E7A4D8C00FF031C /* Frameworks */,
@@ -167,14 +164,14 @@
 			dependencies = (
 				105CE22D1E7A4D8C00FF031C /* PBXTargetDependency */,
 			);
-			name = DuelTests;
+			name = "Square UpTests";
 			productName = DuelTests;
-			productReference = 105CE22B1E7A4D8C00FF031C /* DuelTests.xctest */;
+			productReference = 105CE22B1E7A4D8C00FF031C /* Square UpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		105CE2351E7A4D8C00FF031C /* DuelUITests */ = {
+		105CE2351E7A4D8C00FF031C /* Square UpUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 105CE2451E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "DuelUITests" */;
+			buildConfigurationList = 105CE2451E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Square UpUITests" */;
 			buildPhases = (
 				105CE2321E7A4D8C00FF031C /* Sources */,
 				105CE2331E7A4D8C00FF031C /* Frameworks */,
@@ -185,9 +182,9 @@
 			dependencies = (
 				105CE2381E7A4D8C00FF031C /* PBXTargetDependency */,
 			);
-			name = DuelUITests;
+			name = "Square UpUITests";
 			productName = DuelUITests;
-			productReference = 105CE2361E7A4D8C00FF031C /* DuelUITests.xctest */;
+			productReference = 105CE2361E7A4D8C00FF031C /* Square UpUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 105CE20C1E7A4D8B00FF031C /* Build configuration list for PBXProject "Duel" */;
+			buildConfigurationList = 105CE20C1E7A4D8B00FF031C /* Build configuration list for PBXProject "Square Up" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -232,9 +229,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				105CE2101E7A4D8B00FF031C /* Duel */,
-				105CE22A1E7A4D8C00FF031C /* DuelTests */,
-				105CE2351E7A4D8C00FF031C /* DuelUITests */,
+				105CE2101E7A4D8B00FF031C /* Square Up */,
+				105CE22A1E7A4D8C00FF031C /* Square UpTests */,
+				105CE2351E7A4D8C00FF031C /* Square UpUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,10 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				105CE2201E7A4D8C00FF031C /* Main.storyboard in Resources */,
-				105CE2171E7A4D8B00FF031C /* GameScene.sks in Resources */,
 				105CE2221E7A4D8C00FF031C /* Assets.xcassets in Resources */,
+				105CE24D1E7A552000FF031C /* unownstudioslogo.png in Resources */,
 				105CE2251E7A4D8C00FF031C /* LaunchScreen.storyboard in Resources */,
-				105CE2191E7A4D8C00FF031C /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				105CE21B1E7A4D8C00FF031C /* GameScene.swift in Sources */,
-				105CE21D1E7A4D8C00FF031C /* GameViewController.swift in Sources */,
+				105CE2491E7A54E000FF031C /* ViewController.swift in Sources */,
+				105CE24B1E7A54ED00FF031C /* DuelViewController.swift in Sources */,
 				105CE2151E7A4D8B00FF031C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,12 +296,12 @@
 /* Begin PBXTargetDependency section */
 		105CE22D1E7A4D8C00FF031C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 105CE2101E7A4D8B00FF031C /* Duel */;
+			target = 105CE2101E7A4D8B00FF031C /* Square Up */;
 			targetProxy = 105CE22C1E7A4D8C00FF031C /* PBXContainerItemProxy */;
 		};
 		105CE2381E7A4D8C00FF031C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 105CE2101E7A4D8B00FF031C /* Duel */;
+			target = 105CE2101E7A4D8B00FF031C /* Square Up */;
 			targetProxy = 105CE2371E7A4D8C00FF031C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,7 +424,7 @@
 				DEVELOPMENT_TEAM = SS74D43GDA;
 				INFOPLIST_FILE = Duel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.Duel";
+				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.Square-Up";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -441,7 +437,7 @@
 				DEVELOPMENT_TEAM = SS74D43GDA;
 				INFOPLIST_FILE = Duel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.Duel";
+				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.Square-Up";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -458,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.DuelTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Duel.app/Duel";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Square Up.app/Square Up";
 			};
 			name = Debug;
 		};
@@ -473,7 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.DuelTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Duel.app/Duel";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Square Up.app/Square Up";
 			};
 			name = Release;
 		};
@@ -508,7 +504,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		105CE20C1E7A4D8B00FF031C /* Build configuration list for PBXProject "Duel" */ = {
+		105CE20C1E7A4D8B00FF031C /* Build configuration list for PBXProject "Square Up" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105CE23D1E7A4D8C00FF031C /* Debug */,
@@ -517,7 +513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		105CE23F1E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Duel" */ = {
+		105CE23F1E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Square Up" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105CE2401E7A4D8C00FF031C /* Debug */,
@@ -525,7 +521,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		105CE2421E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "DuelTests" */ = {
+		105CE2421E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Square UpTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105CE2431E7A4D8C00FF031C /* Debug */,
@@ -533,7 +529,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		105CE2451E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "DuelUITests" */ = {
+		105CE2451E7A4D8C00FF031C /* Build configuration list for PBXNativeTarget "Square UpUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				105CE2461E7A4D8C00FF031C /* Debug */,
