@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,6 +30,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Find Duel"/>
+                                <connections>
+                                    <segue destination="dVj-W2-gNL" kind="show" id="5yZ-bq-uyS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duels Won: 420" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plt-9J-pOq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
@@ -37,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="88" id="MWW-ng-P73"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.84650164842605591" green="0.23218286037445068" blue="0.15720474720001221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-8Z-voY">
@@ -51,7 +55,7 @@
                                 <state key="normal" title="Game center"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="plt-9J-pOq" secondAttribute="trailing" id="0dv-oj-6s4"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="BZ2-8e-K5m"/>
@@ -63,12 +67,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="-778" y="38"/>
         </scene>
-        <!--View Controller-->
+        <!--Find Duel View Controller-->
+        <scene sceneID="Dc7-kT-nuJ">
+            <objects>
+                <viewController id="dVj-W2-gNL" customClass="FindDuelViewController" customModule="Square_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ddc-6P-1GF"/>
+                        <viewControllerLayoutGuide type="bottom" id="36c-YH-qRD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YLH-Dy-BYe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-dY-4Ne">
+                                <rect key="frame" x="16" y="20" width="343" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="U7F-DY-Mic"/>
+                                    <constraint firstAttribute="height" constant="42" id="ytv-YF-rMu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nyR-Bf-b0n">
+                                <rect key="frame" x="16" y="70" width="343" height="517"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="XXA-xD-oVQ"/>
+                                    <constraint firstAttribute="height" constant="517" id="ZwE-jh-lI1"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="7jQ-CA-29Q">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jQ-CA-29Q" id="HEb-Em-bPn">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
+                                                    <rect key="frame" x="8" y="11" width="327" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="UVK-vO-kWh" kind="show" id="ALw-lB-jq2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dVj-W2-gNL" id="W0Z-Wb-eWe"/>
+                                    <outlet property="delegate" destination="dVj-W2-gNL" id="gBc-k9-WJX"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-Ef-HoQ">
+                                <rect key="frame" x="90" y="595" width="195" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="JYP-rC-W9f"/>
+                                    <constraint firstAttribute="height" constant="52" id="slQ-ND-wzt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Back Down"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="9V6-AM-gFE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11078125000000005" green="0.11078125000000005" blue="0.11078125000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" id="5un-tV-R7m"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" id="EZd-m7-amD"/>
+                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="top" secondItem="8ab-dY-4Ne" secondAttribute="bottom" constant="8" id="Fxq-8C-u3a"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="top" secondItem="Ddc-6P-1GF" secondAttribute="bottom" id="UsQ-NS-5Dh"/>
+                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" constant="74" id="eiQ-FH-ewj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Of-Ef-HoQ" secondAttribute="trailing" constant="74" id="kEe-Sd-2Pd"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="trailing" secondItem="YLH-Dy-BYe" secondAttribute="trailingMargin" id="mP0-hb-7B3"/>
+                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="trailing" secondItem="YLH-Dy-BYe" secondAttribute="trailingMargin" id="nuk-aq-tQ2"/>
+                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="top" secondItem="nyR-Bf-b0n" secondAttribute="bottom" constant="8" id="ukp-AU-pDw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-Us-J02" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="36.431784107946029"/>
+        </scene>
+        <!--Duel View Controller-->
         <scene sceneID="ekF-3r-C9P">
             <objects>
-                <viewController id="UVK-vO-kWh" sceneMemberID="viewController">
+                <viewController id="UVK-vO-kWh" customClass="DuelViewController" customModule="Square_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JJQ-Og-qEQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Z6r-SD-1zq"/>
@@ -83,16 +174,19 @@
                                     <constraint firstAttribute="height" constant="375" id="hmS-Vk-W92"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Bg-6d6">
                                 <rect key="frame" x="0.0" y="411" width="375" height="256"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <state key="normal" title="FIRE"/>
+                                <connections>
+                                    <action selector="fireButtonAction:" destination="UVK-vO-kWh" eventType="touchUpInside" id="bBe-lt-gbF"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Z6r-SD-1zq" firstAttribute="top" secondItem="EAi-Bg-6d6" secondAttribute="bottom" id="7nv-yr-Dv0"/>
                             <constraint firstAttribute="trailing" secondItem="EAi-Bg-6d6" secondAttribute="trailing" id="CKL-CJ-fUD"/>
@@ -103,10 +197,14 @@
                             <constraint firstItem="sMS-hp-ocm" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" id="bv8-EF-Be8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="sMS-hp-ocm" id="83v-bM-Czb"/>
+                        <outlet property="fireButton" destination="EAi-Bg-6d6" id="yDB-fQ-pX2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frp-LQ-U1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890.39999999999998" y="38.23088455772114"/>
+            <point key="canvasLocation" x="906" y="37"/>
         </scene>
     </scenes>
 </document>

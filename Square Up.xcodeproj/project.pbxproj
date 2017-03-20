@@ -16,6 +16,7 @@
 		105CE2491E7A54E000FF031C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE2481E7A54E000FF031C /* ViewController.swift */; };
 		105CE24B1E7A54ED00FF031C /* DuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE24A1E7A54ED00FF031C /* DuelViewController.swift */; };
 		105CE24D1E7A552000FF031C /* unownstudioslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 105CE24C1E7A552000FF031C /* unownstudioslogo.png */; };
+		105CE24F1E7FA16900FF031C /* FindDuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE24E1E7FA16900FF031C /* FindDuelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		105CE2481E7A54E000FF031C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		105CE24A1E7A54ED00FF031C /* DuelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuelViewController.swift; sourceTree = "<group>"; };
 		105CE24C1E7A552000FF031C /* unownstudioslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unownstudioslogo.png; sourceTree = "<group>"; };
+		105CE24E1E7FA16900FF031C /* FindDuelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDuelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				105CE2141E7A4D8B00FF031C /* AppDelegate.swift */,
 				105CE2481E7A54E000FF031C /* ViewController.swift */,
+				105CE24E1E7FA16900FF031C /* FindDuelViewController.swift */,
 				105CE24A1E7A54ED00FF031C /* DuelViewController.swift */,
 				105CE21E1E7A4D8C00FF031C /* Main.storyboard */,
 				105CE2211E7A4D8C00FF031C /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				105CE2491E7A54E000FF031C /* ViewController.swift in Sources */,
+				105CE24F1E7FA16900FF031C /* FindDuelViewController.swift in Sources */,
 				105CE24B1E7A54ED00FF031C /* DuelViewController.swift in Sources */,
 				105CE2151E7A4D8B00FF031C /* AppDelegate.swift in Sources */,
 			);

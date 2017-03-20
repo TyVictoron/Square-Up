@@ -10,9 +10,31 @@ import UIKit
 
 class DuelViewController: UIViewController {
 
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var fireButton: UIButton!
+    var timer = Timer()
+    var time = 4
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        countLabel.text = "3"
+        fireButton.isHidden = true
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
+        
+    }
+    
+    @IBAction func fireButtonAction(_ sender: Any) {
+        
+    }
+    
+    func update() {
+        time -= 1
+        if (time == 0) {
+            countLabel.text = "FIRE!"
+            fireButton.isHidden = false
+            timer.invalidate()
+        }
+        countLabel.text = "\(time)"
     }
 }
