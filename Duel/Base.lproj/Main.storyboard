@@ -106,18 +106,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
                                                     <rect key="frame" x="8" y="11" width="327" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gEO-5S-hMX" firstAttribute="trailing" secondItem="HEb-Em-bPn" secondAttribute="trailingMargin" id="MD3-3G-DFj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gEO-5S-hMX" secondAttribute="bottom" constant="4" id="o22-kQ-BSK"/>
+                                                <constraint firstItem="gEO-5S-hMX" firstAttribute="leading" secondItem="HEb-Em-bPn" secondAttribute="leadingMargin" id="rTa-t5-Wov"/>
+                                                <constraint firstItem="gEO-5S-hMX" firstAttribute="top" secondItem="HEb-Em-bPn" secondAttribute="topMargin" constant="3" id="vGi-ko-DWh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="UVK-vO-kWh" kind="show" id="ALw-lB-jq2"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -162,7 +164,7 @@
         <!--Duel View Controller-->
         <scene sceneID="ekF-3r-C9P">
             <objects>
-                <viewController id="UVK-vO-kWh" customClass="DuelViewController" customModule="Square_Up" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameSegue" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UVK-vO-kWh" customClass="DuelViewController" customModule="Square_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JJQ-Og-qEQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Z6r-SD-1zq"/>
