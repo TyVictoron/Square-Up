@@ -103,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jQ-CA-29Q" id="HEb-Em-bPn">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
@@ -151,6 +151,9 @@
                             <constraint firstItem="8Of-Ef-HoQ" firstAttribute="top" secondItem="nyR-Bf-b0n" secondAttribute="bottom" constant="8" id="ukp-AU-pDw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="nyR-Bf-b0n" id="gpG-U8-Vnt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-Us-J02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
