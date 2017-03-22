@@ -103,10 +103,10 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jQ-CA-29Q" id="HEb-Em-bPn">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
                                                     <rect key="frame" x="8" y="11" width="327" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -155,6 +155,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nyR-Bf-b0n" id="gpG-U8-Vnt"/>
+                        <segue destination="UVK-vO-kWh" kind="show" identifier="gameSegue" id="oHz-CZ-ZeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-Us-J02" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,12 +174,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 2 1 FIRE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMS-hp-ocm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for opponent..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMS-hp-ocm">
                                 <rect key="frame" x="0.0" y="28" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="hmS-Vk-W92"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -188,6 +189,7 @@
                                 <state key="normal" title="FIRE"/>
                                 <connections>
                                     <action selector="fireButtonAction:" destination="UVK-vO-kWh" eventType="touchUpInside" id="bBe-lt-gbF"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="7RB-iV-CxL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -212,4 +214,7 @@
             <point key="canvasLocation" x="906" y="37"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7RB-iV-CxL"/>
+    </inferredMetricsTieBreakers>
 </document>
