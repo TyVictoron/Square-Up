@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Saddlebag.ttf">
+            <string>Saddlebag-Black</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -22,25 +27,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awp-BW-jGa">
-                                <rect key="frame" x="103" y="308" width="168" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="168" id="4Z4-ZI-fgL"/>
-                                    <constraint firstAttribute="height" constant="51" id="Yge-oA-p4u"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Find Duel"/>
-                                <connections>
-                                    <segue destination="dVj-W2-gNL" kind="show" id="5yZ-bq-uyS"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duels Won: 420" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plt-9J-pOq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="CLS-9P-rnE"/>
                                     <constraint firstAttribute="height" constant="88" id="MWW-ng-P73"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="38"/>
                                 <color key="textColor" red="0.84650164842605591" green="0.23218286037445068" blue="0.15720474720001221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,12 +47,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Game center"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awp-BW-jGa">
+                                <rect key="frame" x="60" y="223" width="255" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Yfe-ke-B4Q"/>
+                                </constraints>
+                                <state key="normal" image="FindDuelButton.png"/>
+                                <connections>
+                                    <segue destination="dVj-W2-gNL" kind="show" id="5yZ-bq-uyS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="plt-9J-pOq" secondAttribute="trailing" id="0dv-oj-6s4"/>
-                            <constraint firstItem="Awp-BW-jGa" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="BZ2-8e-K5m"/>
-                            <constraint firstItem="Awp-BW-jGa" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="jPO-lJ-LT4"/>
+                            <constraint firstItem="Awp-BW-jGa" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="K53-mE-ImM"/>
+                            <constraint firstItem="Awp-BW-jGa" firstAttribute="centerX" secondItem="plt-9J-pOq" secondAttribute="centerX" id="ZL2-AF-c9G"/>
+                            <constraint firstItem="Awp-BW-jGa" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="44" id="aTO-4K-fI6"/>
                             <constraint firstItem="plt-9J-pOq" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="mRg-Tj-VD0"/>
                             <constraint firstItem="plt-9J-pOq" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="n3v-kV-iHf"/>
                         </constraints>
@@ -67,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778" y="38"/>
+            <point key="canvasLocation" x="-778.39999999999998" y="37.331334332833585"/>
         </scene>
         <!--Find Duel View Controller-->
         <scene sceneID="Dc7-kT-nuJ">
@@ -87,7 +91,7 @@
                                     <constraint firstAttribute="width" constant="343" id="U7F-DY-Mic"/>
                                     <constraint firstAttribute="height" constant="42" id="ytv-YF-rMu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="38"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -99,26 +103,21 @@
                                     <constraint firstAttribute="height" constant="517" id="ZwE-jh-lI1"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="7jQ-CA-29Q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="aaM-dZ-TMh" style="IBUITableViewCellStyleDefault" id="7jQ-CA-29Q">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jQ-CA-29Q" id="HEb-Em-bPn">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-5S-hMX">
-                                                    <rect key="frame" x="8" y="11" width="327" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aaM-dZ-TMh">
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="gEO-5S-hMX" firstAttribute="trailing" secondItem="HEb-Em-bPn" secondAttribute="trailingMargin" id="MD3-3G-DFj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gEO-5S-hMX" secondAttribute="bottom" constant="4" id="o22-kQ-BSK"/>
-                                                <constraint firstItem="gEO-5S-hMX" firstAttribute="leading" secondItem="HEb-Em-bPn" secondAttribute="leadingMargin" id="rTa-t5-Wov"/>
-                                                <constraint firstItem="gEO-5S-hMX" firstAttribute="top" secondItem="HEb-Em-bPn" secondAttribute="topMargin" constant="3" id="vGi-ko-DWh"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -133,7 +132,7 @@
                                     <constraint firstAttribute="width" constant="195" id="JYP-rC-W9f"/>
                                     <constraint firstAttribute="height" constant="52" id="slQ-ND-wzt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="32"/>
                                 <state key="normal" title="Back Down"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="9V6-AM-gFE"/>
@@ -214,6 +213,9 @@
             <point key="canvasLocation" x="906" y="37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FindDuelButton.png" width="720" height="553"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7RB-iV-CxL"/>
     </inferredMetricsTieBreakers>
