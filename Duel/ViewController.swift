@@ -14,10 +14,10 @@ class ViewController: UIViewController, MPCManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // appDelegate.mpcManager.disconnect
         // Do any additional setup after loading the view.
     }
-    
+   
     // both reload the data in the table view
     func foundPeer()
     {

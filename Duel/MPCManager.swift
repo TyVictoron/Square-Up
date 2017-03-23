@@ -12,6 +12,9 @@ protocol MPCManagerDelegate {
     func invitationWasReceived(fromPeer: String)
     
     func connectedWithPeer(peerID: MCPeerID)
+    
+    func disconnect()
+    
 }
 
 // this class is for the set up of the conectivity for players to conect to each other
