@@ -8,11 +8,59 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MPCManagerDelegate {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    // both reload the data in the table view
+    func foundPeer()
+    {
+        print("foundPeer")
+        
+    }
+    
+    func lostPeer()
+    {
+        print("lostPeer")
+    }
+    
+    // if the device can connect to another device create a pop up and allow player to join
+    func invitationWasReceived(fromPeer: String)
+    {
+        print("invitationWasReceived")
+        //appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
+        let alert = UIAlertController(title: "", message: "\(fromPeer) wants to Duel!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { (alertAction) -> Void in
+            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
+        }
+        let decline = UIAlertAction(title: "Decline", style: .default) { (alertAction) in
+            print("decline")
+        }
+        
+        
+        alert.addAction(acceptAction)
+        alert.addAction(decline)
+        
+        OperationQueue.main.addOperation { () -> Void in
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // called if invitation was accepted and take player to game view
+    func connectedWithPeer(peerID: MCPeerID)
+    {
+        print("connectedWithPeer")
+        OperationQueue.main.addOperation {
+            self.performSegue(withIdentifier: "gameSegue", sender: self)
+        }
+        
+    }
+
 }

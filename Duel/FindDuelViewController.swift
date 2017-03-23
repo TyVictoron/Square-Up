@@ -83,7 +83,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        cell.textLabel!.text! = appDelegate.mpcManager.foundPeers[indexPath.row].displayName // finds nil
+        cell.textLabel!.text! = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell
     }
 
