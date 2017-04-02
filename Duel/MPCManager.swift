@@ -36,6 +36,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     var dead = false
     
+    var shot = false
+    
     // set up data for other players to see
     override init() {
         super.init()
@@ -121,18 +123,13 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "receivedMPCDataNotification"), object: dictionary)
         let data = dictionary["data"]
         let text = NSString(data: data as! Data, encoding: String.Encoding.utf8.rawValue)!
-        if text.contains("_")
+        if !text.contains("shot") && shot == true
         {
-            let messageArray = String(describing:text).characters.split(separator: "_").map(String.init)
-            if messageArray.count == 3
-            {
-                
-            }
-            
+            sendData(dataToSend: "shot")
         }
         else
         {
-            print("called")
+            print("dead")
             dead = true
         }
         

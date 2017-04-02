@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class ViewController: UIViewController, MPCManagerDelegate {
+    internal func disconnect() {
+        
+    }
+
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     

@@ -10,6 +10,10 @@ import UIKit
 import MultipeerConnectivity
 
 class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+    internal func disconnect() {
+        
+    }
+
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var tableView: UITableView!
