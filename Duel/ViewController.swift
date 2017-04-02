@@ -21,6 +21,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
         super.viewDidLoad()
        // appDelegate.mpcManager.disconnect
         // Do any additional setup after loading the view.
+        appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
     }
    
     // both reload the data in the table view

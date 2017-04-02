@@ -108,6 +108,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         case MCSessionState.connecting:
             print("Connecting to session: \(session)")
             
+        case MCSessionState.notConnected:
+            print("Longer connected to session: \(session)")
+            delegate?.disconnect()
+            
         default:
             print("Did not connect to session: \(session)")
         }
