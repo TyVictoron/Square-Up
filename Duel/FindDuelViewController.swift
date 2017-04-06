@@ -11,7 +11,8 @@ import MultipeerConnectivity
 
 class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     internal func disconnect() {
-        
+        //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
+        print("Disconnected")
     }
 
     
@@ -47,7 +48,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     func invitationWasReceived(fromPeer: String)
     {
         print("invitationWasReceived")
-        //appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
+        appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
         let alert = UIAlertController(title: "", message: "\(fromPeer) wants to Duel!", preferredStyle: UIAlertControllerStyle.alert)
         
         let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { (alertAction) -> Void in
