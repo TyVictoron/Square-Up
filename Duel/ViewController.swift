@@ -9,8 +9,13 @@
 import UIKit
 import MultipeerConnectivity
 
-class ViewController: UIViewController, MPCManagerDelegate {
+
+class ViewController: UIViewController, MPCManagerDelegate{
+    
+   
+    
     internal func disconnect() {
+        
         print("Disconnected")
     }
 
@@ -19,6 +24,8 @@ class ViewController: UIViewController, MPCManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
        // appDelegate.mpcManager.disconnect
         // Do any additional setup after loading the view.
         //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)

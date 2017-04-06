@@ -8,8 +8,11 @@
 
 import UIKit
 import AVFoundation
+import CoreMotion
 
 class DuelViewController: UIViewController {
+    
+     var motionManager = CMMotionManager()
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var fireButton: UIButton!
@@ -33,6 +36,22 @@ class DuelViewController: UIViewController {
         
         shot = self.setupAudioPlayerWithFile("shot", type:"mp3")
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        motionManager.accelerometerUpdateInterval = 0.2
+        
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current()) {(data, error) in
+            
+            if let myData = data
+            {
+                print(myData)
+            }
+            
+            
+            
+        }
     }
     
     @IBAction func fireButtonAction(_ sender: Any) {
