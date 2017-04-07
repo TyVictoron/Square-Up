@@ -20,6 +20,7 @@ class DuelViewController: UIViewController {
     var shot = AVAudioPlayer()
     var timer = Timer()
     var time = 10
+    var canShoot = true
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -28,7 +29,7 @@ class DuelViewController: UIViewController {
         countLabel.text = "10"
         fireButton.isHidden = true
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
+        
         
         // assign sound and play it
         bgm = self.setupAudioPlayerWithFile("bgm", type:"mp3")
@@ -46,13 +47,16 @@ class DuelViewController: UIViewController {
             
             if let myData = data
             {
-                if myData.acceleration.y > 0.8
+                if myData.acceleration.y > 0.8 && self.canShoot == true
                 {
                     print("holster position")
+                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
+                    self.canShoot = false
                 }
-                if myData.acceleration.y < 0.15
+                if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0
                 {
                     print("shooting position")
+                    self.fireButton.titleLabel?.text = "You Shot'm"
                 }
             }
             
@@ -70,7 +74,7 @@ class DuelViewController: UIViewController {
     
     func update() {
         time -= 1
-        if (time == 0) {
+        if (time <= 0) {
             countLabel.text = "FIRE!"
             fireButton.isHidden = false
             timer.invalidate()
