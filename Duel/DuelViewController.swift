@@ -42,7 +42,7 @@ class DuelViewController: UIViewController {
     {
         motionManager.accelerometerUpdateInterval = 0.2
         
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current()) {(data, error) in
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data, error) in
             
             if let myData = data
             {
