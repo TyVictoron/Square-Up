@@ -10,6 +10,9 @@ import UIKit
 import MultipeerConnectivity
 
 class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    var duelsWon = 0
+    
     internal func disconnect() {
         //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
         print("Disconnected")
@@ -72,6 +75,8 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     {
         print("connectedWithPeer")
         OperationQueue.main.addOperation {
+            let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "gameSegue") as! DuelViewController
+            fdvc.duelsWon = self.duelsWon
             self.performSegue(withIdentifier: "gameSegue", sender: self)
         }
         

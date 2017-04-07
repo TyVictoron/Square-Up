@@ -16,11 +16,13 @@ class DuelViewController: UIViewController {
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var fireButton: UIButton!
+    var mcm = MPCManager()
     var bgm = AVAudioPlayer()
     var shot = AVAudioPlayer()
     var timer = Timer()
     var time = 10
     var canShoot = true
+    var duelsWon = 0
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -57,6 +59,19 @@ class DuelViewController: UIViewController {
                 {
                     print("shooting position")
                     self.fireButton.titleLabel?.text = "You Shot'm"
+                    self.shot.play()
+                    self.appDelegate.mpcManager.shot = true
+                    self.bgm.stop()
+                    self.mcm.sendData(dataToSend: "shot")
+                    if (self.mcm.dead == true) {
+                        //passes the data over to the gameover view without story board sugue
+                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        self.present(svc, animated: true, completion: nil)
+                    } else {
+                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        svc.duelsWon = self.duelsWon + 1
+                        self.present(svc, animated: true, completion: nil)
+                    }
                 }
             }
             
@@ -66,10 +81,7 @@ class DuelViewController: UIViewController {
     }
     
     @IBAction func fireButtonAction(_ sender: Any) {
-        shot.play()
-        appDelegate.mpcManager.shot = true
-        bgm.stop()
-        //go to next view
+        //un needed
     }
     
     func update() {

@@ -12,7 +12,8 @@ import MultipeerConnectivity
 
 class ViewController: UIViewController, MPCManagerDelegate{
     
-   
+    @IBOutlet weak var duelsWonLabel: UILabel!
+    var duelsWon = 0
     
     internal func disconnect() {
         
@@ -25,13 +26,14 @@ class ViewController: UIViewController, MPCManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+       duelsWonLabel.text = "Duels Won: \(duelsWon)"
+        
        // appDelegate.mpcManager.disconnect
         // Do any additional setup after loading the view.
         //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
         //MCSession.disconnect(appDelegate.mpcManager.session)
         appDelegate.mpcManager.session.disconnect()
-        appDelegate.mpcManager.browser.stopBrowsingForPeers()
+        //appDelegate.mpcManager.browser.stopBrowsingForPeers()
     }
    
     // both reload the data in the table view
@@ -77,6 +79,13 @@ class ViewController: UIViewController, MPCManagerDelegate{
             self.performSegue(withIdentifier: "gameSegue", sender: self)
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "FDVC") {
+            let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "FindDVC") as! FindDuelViewController
+            fdvc.duelsWon = duelsWon
+        }
     }
 
 }
