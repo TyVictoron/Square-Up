@@ -46,7 +46,14 @@ class DuelViewController: UIViewController {
             
             if let myData = data
             {
-                print(myData)
+                if myData.acceleration.y > 0.8
+                {
+                    print("holster position")
+                }
+                if myData.acceleration.y < 0.15
+                {
+                    print("shooting position")
+                }
             }
             
             
