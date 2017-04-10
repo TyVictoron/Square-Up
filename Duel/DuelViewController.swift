@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import CoreMotion
+import AudioToolbox
 
 class DuelViewController: UIViewController {
     
@@ -80,9 +81,6 @@ class DuelViewController: UIViewController {
         }
     }
     
-    @IBAction func fireButtonAction(_ sender: Any) {
-        //un needed
-    }
     
     func update() {
         time -= 1
@@ -90,6 +88,7 @@ class DuelViewController: UIViewController {
             countLabel.text = "FIRE!"
             fireButton.isHidden = false
             timer.invalidate()
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
         countLabel.text = "\(time)"
     }
