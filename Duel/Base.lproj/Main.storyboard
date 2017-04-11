@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,11 +112,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7jQ-CA-29Q" id="HEb-Em-bPn">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aaM-dZ-TMh">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="25"/>
                                                     <nil key="textColor"/>
@@ -185,10 +187,15 @@
                                 <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uln-kg-XTQ">
+                                <rect key="frame" x="195" y="497" width="180" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Home"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Bg-6d6">
-                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                <state key="normal" title="FIRE"/>
+                                <rect key="frame" x="7" y="497" width="180" height="170"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Play Again?"/>
                                 <connections>
                                     <action selector="fireButtonAction:" destination="UVK-vO-kWh" eventType="touchUpInside" id="bBe-lt-gbF"/>
                                 </connections>
@@ -196,23 +203,30 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uln-kg-XTQ" firstAttribute="baseline" secondItem="EAi-Bg-6d6" secondAttribute="firstBaseline" id="57C-O3-icn"/>
+                            <constraint firstItem="uln-kg-XTQ" firstAttribute="leading" secondItem="EAi-Bg-6d6" secondAttribute="trailing" constant="8" symbolic="YES" id="6KL-hD-QJI"/>
                             <constraint firstItem="Z6r-SD-1zq" firstAttribute="top" secondItem="EAi-Bg-6d6" secondAttribute="bottom" id="7nv-yr-Dv0"/>
-                            <constraint firstAttribute="trailing" secondItem="EAi-Bg-6d6" secondAttribute="trailing" id="CKL-CJ-fUD"/>
-                            <constraint firstItem="EAi-Bg-6d6" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" id="S8r-gG-vgN"/>
+                            <constraint firstAttribute="trailing" secondItem="EAi-Bg-6d6" secondAttribute="trailing" constant="188" id="CKL-CJ-fUD"/>
+                            <constraint firstItem="uln-kg-XTQ" firstAttribute="firstBaseline" secondItem="EAi-Bg-6d6" secondAttribute="baseline" id="Hq2-oQ-eAg"/>
+                            <constraint firstItem="EAi-Bg-6d6" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" constant="7" id="S8r-gG-vgN"/>
                             <constraint firstAttribute="trailing" secondItem="sMS-hp-ocm" secondAttribute="trailing" id="Sde-Ct-1CP"/>
                             <constraint firstItem="sMS-hp-ocm" firstAttribute="top" secondItem="JJQ-Og-qEQ" secondAttribute="bottom" constant="8" id="V6F-3p-LP6"/>
-                            <constraint firstItem="EAi-Bg-6d6" firstAttribute="top" secondItem="sMS-hp-ocm" secondAttribute="bottom" constant="8" id="aTk-TS-9Mz"/>
+                            <constraint firstItem="uln-kg-XTQ" firstAttribute="trailing" secondItem="sMS-hp-ocm" secondAttribute="trailing" id="XJY-Yx-yNb"/>
+                            <constraint firstItem="EAi-Bg-6d6" firstAttribute="top" secondItem="sMS-hp-ocm" secondAttribute="bottom" constant="94" id="aTk-TS-9Mz"/>
                             <constraint firstItem="sMS-hp-ocm" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" id="bv8-EF-Be8"/>
+                            <constraint firstItem="uln-kg-XTQ" firstAttribute="top" secondItem="EAi-Bg-6d6" secondAttribute="top" id="ojL-dn-eV0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="sMS-hp-ocm" id="83v-bM-Czb"/>
                         <outlet property="fireButton" destination="EAi-Bg-6d6" id="yDB-fQ-pX2"/>
+                        <outlet property="homeButton" destination="uln-kg-XTQ" id="4gN-Yf-zlD"/>
+                        <outlet property="playAgainButton" destination="EAi-Bg-6d6" id="HOV-d7-0UQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frp-LQ-U1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="37"/>
+            <point key="canvasLocation" x="904.79999999999995" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>

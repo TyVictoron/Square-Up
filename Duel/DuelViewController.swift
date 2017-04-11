@@ -16,21 +16,27 @@ class DuelViewController: UIViewController {
      var motionManager = CMMotionManager()
 
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var fireButton: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    
     var mcm = MPCManager()
     var bgm = AVAudioPlayer()
     var shot = AVAudioPlayer()
     var timer = Timer()
-    var time = 10
+    var time = arc4random_uniform(7) + 3
     var canShoot = true
     var duelsWon = 0
+    
+    
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countLabel.text = "10"
-        fireButton.isHidden = true
+        countLabel.text = "\(time)"
+        playAgainButton.isHidden = true
+        homeButton.isHidden = true
+        
         
         
         
@@ -59,19 +65,20 @@ class DuelViewController: UIViewController {
                 if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0
                 {
                     print("shooting position")
-                    self.fireButton.titleLabel?.text = "You Shot'm"
                     self.shot.play()
                     self.appDelegate.mpcManager.shot = true
                     self.bgm.stop()
                     self.mcm.sendData(dataToSend: "shot")
                     if (self.mcm.dead == true) {
+                        self.playAgainButton.isHidden = false
+                        self.homeButton.isHidden = false
                         //passes the data over to the gameover view without story board sugue
-                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                        self.present(svc, animated: true, completion: nil)
+                     //   let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                       // self.present(svc, animated: true, completion: nil)
                     } else {
-                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                        svc.duelsWon = self.duelsWon + 1
-                        self.present(svc, animated: true, completion: nil)
+                  //      let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                     //   svc.duelsWon = self.duelsWon + 1
+                      //  self.present(svc, animated: true, completion: nil)
                     }
                 }
             }
@@ -86,7 +93,6 @@ class DuelViewController: UIViewController {
         time -= 1
         if (time <= 0) {
             countLabel.text = "FIRE!"
-            fireButton.isHidden = false
             timer.invalidate()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
