@@ -191,13 +191,16 @@
                                 <rect key="frame" x="195" y="497" width="180" height="170"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="homeVC" id="aX7-RU-nLM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Bg-6d6">
                                 <rect key="frame" x="7" y="497" width="180" height="170"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Play Again?"/>
                                 <connections>
-                                    <action selector="fireButtonAction:" destination="UVK-vO-kWh" eventType="touchUpInside" id="bBe-lt-gbF"/>
+                                    <action selector="playAgainButtonAction:" destination="UVK-vO-kWh" eventType="touchUpInside" id="b9T-RO-0si"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -219,7 +222,6 @@
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="sMS-hp-ocm" id="83v-bM-Czb"/>
-                        <outlet property="fireButton" destination="EAi-Bg-6d6" id="yDB-fQ-pX2"/>
                         <outlet property="homeButton" destination="uln-kg-XTQ" id="4gN-Yf-zlD"/>
                         <outlet property="playAgainButton" destination="EAi-Bg-6d6" id="HOV-d7-0UQ"/>
                     </connections>
@@ -232,4 +234,7 @@
     <resources>
         <image name="FindDuelButton.png" width="720" height="553"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aX7-RU-nLM"/>
+    </inferredMetricsTieBreakers>
 </document>

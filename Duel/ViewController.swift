@@ -16,7 +16,7 @@ class ViewController: UIViewController, MPCManagerDelegate{
     var duelsWon = 0
     
     internal func disconnect() {
-        appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
+        //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
         print("Disconnected")
     }
 

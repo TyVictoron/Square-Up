@@ -37,9 +37,6 @@ class DuelViewController: UIViewController {
         playAgainButton.isHidden = true
         homeButton.isHidden = true
         
-        
-        
-        
         // assign sound and play it
         bgm = self.setupAudioPlayerWithFile("bgm", type:"mp3")
         bgm.play()
@@ -76,6 +73,9 @@ class DuelViewController: UIViewController {
                      //   let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                        // self.present(svc, animated: true, completion: nil)
                     } else {
+                        self.playAgainButton.isHidden = false
+                        self.homeButton.isHidden = false
+                        self.duelsWon += 1
                   //      let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                      //   svc.duelsWon = self.duelsWon + 1
                       //  self.present(svc, animated: true, completion: nil)
@@ -88,6 +88,12 @@ class DuelViewController: UIViewController {
         }
     }
     
+    @IBAction func playAgainButtonAction(_ sender: Any) {
+        self.playAgainButton.isHidden = true
+        self.homeButton.isHidden = true
+        canShoot = true
+        time = arc4random_uniform(7) + 3
+    }
     
     func update() {
         time -= 1
@@ -117,5 +123,12 @@ class DuelViewController: UIViewController {
         
         //4
         return audioPlayer!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "homeVC") {
+            let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+            fdvc.duelsWon = duelsWon
+        }
     }
 }
