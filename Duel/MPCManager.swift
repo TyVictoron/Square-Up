@@ -127,6 +127,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "receivedMPCDataNotification"), object: dictionary)
         let data = dictionary["data"]
         let text = NSString(data: data as! Data, encoding: String.Encoding.utf8.rawValue)!
+        print(text)
         if !text.contains("shot") && shot == true
         {
             sendData(dataToSend: "shot")
@@ -149,14 +150,14 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     // sends data to the other device via the sesion
     func sendData(dataToSend: String)
     {
-         //print("sending... : " + dataToSend)
+         print("sending... : " + dataToSend)
         
         if session.connectedPeers.count > 0
         {
             do
             {
                 try session.send(dataToSend.data(using: .utf8)!, toPeers: session.connectedPeers, with: MCSessionSendDataMode.unreliable)
-               //print("sent")
+               print("sent")
             }
             catch
             {
@@ -166,5 +167,4 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
     }
 }
-
 
