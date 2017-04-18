@@ -61,27 +61,31 @@ class DuelViewController: UIViewController {
                 }
                 if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0
                 {
+                    // the connections may be breaking here before we can send the data
                     print("shooting position")
-                    self.shot.play()
-                    self.appDelegate.mpcManager.shot = true
-                    self.bgm.stop()
-                    self.mcm.sendData(dataToSend: "shot")
+                    if (self.canShoot == true) {
+                        self.shot.play()
+                        self.appDelegate.mpcManager.shot = true
+                        self.bgm.stop()
+                        self.mcm.sendData(dataToSend: "shot")
+                    }
                     if (self.mcm.dead == true) {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
                         //passes the data over to the gameover view without story board sugue
-                     //   let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                       // self.present(svc, animated: true, completion: nil)
+                        //   let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        // self.present(svc, animated: true, completion: nil)
                     } else {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
                         self.duelsWon += 1
                         self.view.backgroundColor = UIColor.green
-                  //      let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                     //   svc.duelsWon = self.duelsWon + 1
-                      //  self.present(svc, animated: true, completion: nil)
+                        //      let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        //   svc.duelsWon = self.duelsWon + 1
+                        //  self.present(svc, animated: true, completion: nil)
                     }
+
                 }
             }
             

@@ -123,17 +123,19 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     // holds the data for the current sesion that is being played such as the bullet and position and rotations
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("SOMETHING HAPPENED YAY!!!")
         let dictionary: [String: AnyObject] = ["data": data as AnyObject, "fromPeer": peerID]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "receivedMPCDataNotification"), object: dictionary)
         let data = dictionary["data"]
         let text = NSString(data: data as! Data, encoding: String.Encoding.utf8.rawValue)!
         print(text)
+        
         if text.contains("shot")
         {
             print("Dead")
             dead = true
         }
-        else if !text.contains("shot")
+        else
         {
             print("you Shot First")
             shot = true
