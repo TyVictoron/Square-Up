@@ -128,14 +128,15 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         let data = dictionary["data"]
         let text = NSString(data: data as! Data, encoding: String.Encoding.utf8.rawValue)!
         print(text)
-        if !text.contains("shot") && shot == true
+        if text.contains("shot")
         {
-            sendData(dataToSend: "shot")
-        }
-        else
-        {
-            print("dead")
+            print("Dead")
             dead = true
+        }
+        else if !text.contains("shot")
+        {
+            print("you Shot First")
+            shot = true
         }
         
     }

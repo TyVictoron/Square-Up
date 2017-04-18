@@ -69,6 +69,7 @@ class DuelViewController: UIViewController {
                     if (self.mcm.dead == true) {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
+                        self.view.backgroundColor = UIColor.red
                         //passes the data over to the gameover view without story board sugue
                      //   let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                        // self.present(svc, animated: true, completion: nil)
@@ -76,6 +77,7 @@ class DuelViewController: UIViewController {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
                         self.duelsWon += 1
+                        self.view.backgroundColor = UIColor.green
                   //      let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                      //   svc.duelsWon = self.duelsWon + 1
                       //  self.present(svc, animated: true, completion: nil)
