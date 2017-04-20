@@ -155,8 +155,9 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     {
          print("sending... : " + dataToSend)
         
-        if session.connectedPeers.count > 0
-        {
+        // This done broke VVVV
+        //if session.connectedPeers.count > 0
+        //{
             do
             {
                 try session.send(dataToSend.data(using: .utf8)!, toPeers: session.connectedPeers, with: MCSessionSendDataMode.unreliable)
@@ -167,7 +168,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                 print("error sending")
             }
             
-        }
+        //}
     }
 }
 

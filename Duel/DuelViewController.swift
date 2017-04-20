@@ -43,7 +43,14 @@ class DuelViewController: UIViewController {
         
         shot = self.setupAudioPlayerWithFile("shot", type:"mp3")
         
+        if appDelegate.mpcManager.session.connectedPeers.count > 0
+        {
+            print("viola")
+        }
+        
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool)
     {
@@ -63,12 +70,13 @@ class DuelViewController: UIViewController {
                 {
                     // the connections may be breaking here before we can send the data
                     print("shooting position")
-                    if (self.canShoot == true) {
+                    //if (self.canShoot == true) {
                         self.shot.play()
                         self.appDelegate.mpcManager.shot = true
                         self.bgm.stop()
                         self.mcm.sendData(dataToSend: "shot")
-                    }
+                        print("sendingData")
+                    //}
                     if (self.mcm.dead == true) {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
