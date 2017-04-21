@@ -38,6 +38,10 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     var shot = false
     
+    var holstered = false
+    
+    var time = arc4random_uniform(7) + 3
+    
     // set up data for other players to see
     override init() {
         super.init()
@@ -134,10 +138,11 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         {
             print("Dead")
             dead = true
-        }
-        else
-        {
-            print("you Shot First")
+        }else if (text.contains("Holstered")) {
+            print("Holstered")
+            holstered = true
+        } else {
+            print("You Shot First")
             shot = true
         }
         

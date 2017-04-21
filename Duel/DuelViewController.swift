@@ -23,7 +23,7 @@ class DuelViewController: UIViewController {
     var bgm = AVAudioPlayer()
     var shot = AVAudioPlayer()
     var timer = Timer()
-    var time = arc4random_uniform(7) + 3
+    var time = 0
     var canShoot = true
     var duelsWon = 0
     
@@ -33,7 +33,6 @@ class DuelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countLabel.text = "\(time)"
         playAgainButton.isHidden = true
         homeButton.isHidden = true
         
@@ -47,6 +46,9 @@ class DuelViewController: UIViewController {
         {
             print("viola")
         }
+        
+        time = Int(UInt32(appDelegate.mpcManager.time))
+        countLabel.text = "\(time)"
         
     }
     
@@ -64,8 +66,10 @@ class DuelViewController: UIViewController {
                 {
                     print("holster position")
                     self.appDelegate.mpcManager.sendData(dataToSend: "Holstered")
-                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
-                    self.canShoot = false
+                    if (self.appDelegate.mpcManager.holstered == true) {
+                        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
+                        self.canShoot = false
+                    }
                 }
                 if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0
                 {
@@ -107,7 +111,7 @@ class DuelViewController: UIViewController {
         self.playAgainButton.isHidden = true
         self.homeButton.isHidden = true
         canShoot = true
-        time = arc4random_uniform(7) + 3
+        self.view.backgroundColor = UIColor.darkGray
     }
     
     func update() {
