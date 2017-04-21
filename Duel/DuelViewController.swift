@@ -63,6 +63,7 @@ class DuelViewController: UIViewController {
                 if myData.acceleration.y > 0.8 && self.canShoot == true
                 {
                     print("holster position")
+                    self.appDelegate.mpcManager.sendData(dataToSend: "Holstered")
                     self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
                     self.canShoot = false
                 }
@@ -70,14 +71,14 @@ class DuelViewController: UIViewController {
                 {
                     // the connections may be breaking here before we can send the data
                     print("shooting position")
-                    //if (self.canShoot == true) {
-                        self.shot.play()
-                        self.appDelegate.mpcManager.shot = true
-                        self.bgm.stop()
-                        self.mcm.sendData(dataToSend: "shot")
-                        print("sendingData")
-                    //}
-                    if (self.mcm.dead == true) {
+                    self.shot.play()
+                    self.appDelegate.mpcManager.shot = true
+                    self.bgm.stop()
+                    self.appDelegate.mpcManager.sendData(dataToSend: "shot")
+                    self.canShoot = true
+                    print("sendingData")
+                    
+                    if (self.appDelegate.mpcManager.dead == true) {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
