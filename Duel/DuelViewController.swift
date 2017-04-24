@@ -23,7 +23,7 @@ class DuelViewController: UIViewController {
     var bgm = AVAudioPlayer()
     var shot = AVAudioPlayer()
     var timer = Timer()
-    var time = 0
+    var time = arc4random_uniform(7) + 3
     var canShoot = true
     var duelsWon = 0
     
@@ -47,8 +47,11 @@ class DuelViewController: UIViewController {
             print("viola")
         }
         
-        time = Int(UInt32(appDelegate.mpcManager.time))
+        appDelegate.mpcManager.sendData(dataToSend: "\(time)")
+        
+        time = UInt32(appDelegate.mpcManager.time)
         countLabel.text = "\(time)"
+        
         
     }
     
@@ -99,6 +102,9 @@ class DuelViewController: UIViewController {
                         //  self.present(svc, animated: true, completion: nil)
                     }
 
+                }
+                else if (self.time != 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
+                    print("Too Early")
                 }
             }
             

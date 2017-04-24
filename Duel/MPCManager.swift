@@ -40,7 +40,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     var holstered = false
     
-    var time = arc4random_uniform(7) + 3
+    var time = 10
     
     // set up data for other players to see
     override init() {
@@ -141,6 +141,22 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }else if (text.contains("Holstered")) {
             print("Holstered")
             holstered = true
+        } else if (text.contains("3")) {
+            time = 3
+        } else if (text.contains("4")) {
+            time = 4
+        } else if (text.contains("5")) {
+            time = 5
+        } else if (text.contains("6")) {
+            time = 6
+        } else if (text.contains("7")) {
+            time = 7
+        } else if (text.contains("8")) {
+            time = 8
+        } else if (text.contains("9")) {
+            time = 9
+        } else if (text.contains("10")) {
+            time = 10
         } else {
             print("You Shot First")
             shot = true
@@ -160,20 +176,19 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     {
          print("sending... : " + dataToSend)
         
-        // This done broke VVVV
-        //if session.connectedPeers.count > 0
-        //{
+        if session.connectedPeers.count > 0
+        {
             do
             {
                 try session.send(dataToSend.data(using: .utf8)!, toPeers: session.connectedPeers, with: MCSessionSendDataMode.unreliable)
-               print("sent")
+                print("sent")
             }
             catch
             {
                 print("error sending")
             }
             
-        //}
+        }
     }
 }
 
