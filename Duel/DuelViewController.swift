@@ -26,6 +26,7 @@ class DuelViewController: UIViewController {
     var time = arc4random_uniform(7) + 3
     var canShoot = true
     var duelsWon = 0
+    var dead = false
     
     
     
@@ -65,7 +66,7 @@ class DuelViewController: UIViewController {
             
             if let myData = data
             {
-                if myData.acceleration.y > 0.8 && self.canShoot == true
+                if myData.acceleration.y > 0.8 && self.canShoot == true && self.appDelegate.mpcManager.session.connectedPeers.count > 0
                 {
                     print("holster position")
                     self.appDelegate.mpcManager.sendData(dataToSend: "Holstered")
@@ -74,32 +75,34 @@ class DuelViewController: UIViewController {
                         self.canShoot = false
                     }
                 }
-                if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0
+                if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0 && self.view.backgroundColor != UIColor.red
                 {
-                    // the connections may be breaking here before we can send the data
                     print("shooting position")
-                    self.shot.play()
-                    self.appDelegate.mpcManager.shot = true
-                    self.bgm.stop()
-                    self.appDelegate.mpcManager.sendData(dataToSend: "shot")
-                    self.canShoot = true
-                    print("sendingData")
                     
                     if (self.appDelegate.mpcManager.dead == true) {
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
+                        
                         //passes the data over to the gameover view without story board sugue
-                        //   let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                        // self.present(svc, animated: true, completion: nil)
+                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        svc.duelsWon = self.duelsWon
                     } else {
+                        // shooting stuffs
+                        self.shot.play()
+                        self.appDelegate.mpcManager.shot = true
+                        self.bgm.stop()
+                        self.appDelegate.mpcManager.sendData(dataToSend: "shot")
+                        
+                        // activates buttons
                         self.playAgainButton.isHidden = false
                         self.homeButton.isHidden = false
                         self.duelsWon += 1
                         self.view.backgroundColor = UIColor.green
-                        //      let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                        //   svc.duelsWon = self.duelsWon + 1
-                        //  self.present(svc, animated: true, completion: nil)
+                        
+                        //passes the data over to the gameover view without story board sugue
+                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        svc.duelsWon = self.duelsWon + 1
                     }
 
                 }
