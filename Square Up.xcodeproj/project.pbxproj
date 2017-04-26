@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		100132381E8C7AC600CB2B81 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 100132371E8C7AC600CB2B81 /* bgm.mp3 */; };
 		1001323C1E90CF9F00CB2B81 /* shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1001323B1E90CF9F00CB2B81 /* shot.mp3 */; };
+		1010A3021EB0E97A00DECEED /* Draw.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1010A3011EB0E97A00DECEED /* Draw.mp3 */; };
 		1044B3B51E82D89F00918F38 /* icon-messages-app-27x20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044B3851E82D89F00918F38 /* icon-messages-app-27x20@1x.png */; };
 		1044B3B61E82D89F00918F38 /* icon-messages-app-27x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044B3861E82D89F00918F38 /* icon-messages-app-27x20@2x.png */; };
 		1044B3B71E82D89F00918F38 /* icon-messages-app-27x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044B3871E82D89F00918F38 /* icon-messages-app-27x20@3x.png */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		100132371E8C7AC600CB2B81 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		1001323B1E90CF9F00CB2B81 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
+		1010A3011EB0E97A00DECEED /* Draw.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Draw.mp3; sourceTree = "<group>"; };
 		1044B3851E82D89F00918F38 /* icon-messages-app-27x20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-27x20@1x.png"; sourceTree = "<group>"; };
 		1044B3861E82D89F00918F38 /* icon-messages-app-27x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-27x20@2x.png"; sourceTree = "<group>"; };
 		1044B3871E82D89F00918F38 /* icon-messages-app-27x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-27x20@3x.png"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				105CE2391E7A4D8C00FF031C /* DuelUITests */,
 				105CE24C1E7A552000FF031C /* unownstudioslogo.png */,
 				100132371E8C7AC600CB2B81 /* bgm.mp3 */,
+				1010A3011EB0E97A00DECEED /* Draw.mp3 */,
 				1001323B1E90CF9F00CB2B81 /* shot.mp3 */,
 				1044B3DD1E834FCC00918F38 /* FindDuelButton.png */,
 				1044B3751E82D89F00918F38 /* SquareUpIcon */,
@@ -441,6 +444,7 @@
 				1044B3C91E82D89F00918F38 /* Icon-App-40x40@2x.png in Resources */,
 				1044B3CF1E82D89F00918F38 /* Icon-App-60x60@3x.png in Resources */,
 				1044B3C01E82D89F00918F38 /* icon-messages-transcript-32x24@3x.png in Resources */,
+				1010A3021EB0E97A00DECEED /* Draw.mp3 in Resources */,
 				1044B3B51E82D89F00918F38 /* icon-messages-app-27x20@1x.png in Resources */,
 				1044B3D11E82D89F00918F38 /* Icon-App-72x72@2x.png in Resources */,
 				1044B3C41E82D89F00918F38 /* Icon-App-20x20@3x.png in Resources */,

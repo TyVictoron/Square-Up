@@ -22,6 +22,7 @@ class DuelViewController: UIViewController {
     var mcm = MPCManager()
     var bgm = AVAudioPlayer()
     var shot = AVAudioPlayer()
+    var draw = AVAudioPlayer()
     var timer = Timer()
     var time = arc4random_uniform(7) + 3
     var canShoot = true
@@ -42,6 +43,7 @@ class DuelViewController: UIViewController {
         bgm.play()
         
         shot = self.setupAudioPlayerWithFile("shot", type:"mp3")
+        draw = self.setupAudioPlayerWithFile("Draw", type: "mp3")
         
         if appDelegate.mpcManager.session.connectedPeers.count > 0
         {
@@ -108,6 +110,14 @@ class DuelViewController: UIViewController {
                 }
                 else if (self.time != 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
                     print("Too Early")
+                    
+                    self.view.backgroundColor = UIColor.red
+                    self.playAgainButton.isHidden = false
+                    self.homeButton.isHidden = false
+                    
+                    //passes the data over to the gameover view without story board sugue
+                    let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                    svc.duelsWon = self.duelsWon
                 }
             }
             
@@ -127,6 +137,7 @@ class DuelViewController: UIViewController {
         time -= 1
         if (time <= 0) {
             countLabel.text = "FIRE!"
+            self.draw.play()
             timer.invalidate()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
