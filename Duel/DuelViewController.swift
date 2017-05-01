@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import CoreMotion
 import AudioToolbox
+import CoreData
 
 class DuelViewController: UIViewController {
     
@@ -28,7 +29,7 @@ class DuelViewController: UIViewController {
     var canShoot = true
     var duelsWon = 0
     var dead = false
-    
+    var winLossText = ""
     
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -84,10 +85,23 @@ class DuelViewController: UIViewController {
                     print("shooting position")
                     
                     if (self.appDelegate.mpcManager.dead == true) {
-                        self.playAgainButton.isHidden = false
-                        self.homeButton.isHidden = false
+                        //self.playAgainButton.isHidden = false
+                        //self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
                         
+                        self.winLossText = "You Lost"
+                        
+                        let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
+                            let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                            self.appDelegate.mpcManager.shot = false
+                            svc.duelsWon = self.duelsWon
+                            self.present(svc, animated: true, completion: nil)
+                        }
+                        
+                        alert.addAction(playAgainAction)
+                        self.present(alert, animated: true, completion: nil)
                         
                     } else {
                         // shooting stuffs
@@ -95,26 +109,47 @@ class DuelViewController: UIViewController {
                         self.appDelegate.mpcManager.shot = true
                         self.bgm.stop()
                         self.appDelegate.mpcManager.sendData(dataToSend: "shot")
-                        
-                        // activates buttons
-                        self.playAgainButton.isHidden = false
-                        self.homeButton.isHidden = false
-                        self.duelsWon += 1
                         self.view.backgroundColor = UIColor.green
+                        self.winLossText = "You Won!"
                         
                         let defaults: UserDefaults = UserDefaults.standard
                         defaults.set(self.duelsWon, forKey: "highScore")
                         defaults.synchronize()
+                        
+                        let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
+                            let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                            self.appDelegate.mpcManager.shot = false
+                            self.duelsWon += 1
+                            svc.duelsWon = self.duelsWon
+                            self.present(svc, animated: true, completion: nil)
+                        }
+                        
+                        alert.addAction(playAgainAction)
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        
                     }
 
                 }
                 else if (self.time > 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
                     print("Too Early")
+                    self.winLossText = "You Went Early"
                     
                     self.view.backgroundColor = UIColor.red
-                    self.playAgainButton.isHidden = false
-                    self.homeButton.isHidden = false
                     
+                    let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
+                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        self.appDelegate.mpcManager.shot = false
+                        svc.duelsWon = self.duelsWon
+                        self.present(svc, animated: true, completion: nil)
+                    }
+                    
+                    alert.addAction(playAgainAction)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
             
