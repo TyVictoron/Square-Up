@@ -54,7 +54,7 @@ class DuelViewController: UIViewController {
         
         
         time = UInt32(appDelegate.mpcManager.time)
-        countLabel.text = "\(time)"
+        countLabel.text = "Hold phone upside down to start"
         
         
     }
@@ -78,6 +78,7 @@ class DuelViewController: UIViewController {
                     if (self.appDelegate.mpcManager.holstered == true) {
                         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
                         self.canShoot = false
+                        self.countLabel.isHidden = true
                     }
                 }
                 if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0 && self.view.backgroundColor != UIColor.red
@@ -168,12 +169,12 @@ class DuelViewController: UIViewController {
     func update() {
         time -= 1
         if (time <= 0) {
-            countLabel.text = "FIRE!"
+            //countLabel.text = "FIRE!"
             self.draw.play()
             timer.invalidate()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
-        countLabel.text = "\(time)"
+        //countLabel.text = "\(time)"
     }
     
     // Sound setup
