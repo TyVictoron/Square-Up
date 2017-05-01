@@ -50,7 +50,7 @@ class DuelViewController: UIViewController {
             print("viola")
         }
         
-        appDelegate.mpcManager.sendData(dataToSend: "\(time)")
+        
         
         time = UInt32(appDelegate.mpcManager.time)
         countLabel.text = "\(time)"
@@ -62,6 +62,8 @@ class DuelViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool)
     {
+        appDelegate.mpcManager.sendData(dataToSend: "\(time)")
+        
         motionManager.accelerometerUpdateInterval = 0.2
         
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data, error) in
@@ -86,9 +88,7 @@ class DuelViewController: UIViewController {
                         self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
                         
-                        //passes the data over to the gameover view without story board sugue
-                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                        svc.duelsWon = self.duelsWon
+                        
                     } else {
                         // shooting stuffs
                         self.shot.play()
@@ -102,22 +102,19 @@ class DuelViewController: UIViewController {
                         self.duelsWon += 1
                         self.view.backgroundColor = UIColor.green
                         
-                        //passes the data over to the gameover view without story board sugue
-                        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                        svc.duelsWon = self.duelsWon + 1
+                        let defaults: UserDefaults = UserDefaults.standard
+                        defaults.set(self.duelsWon, forKey: "highScore")
+                        defaults.synchronize()
                     }
 
                 }
-                else if (self.time != 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
+                else if (self.time > 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
                     print("Too Early")
                     
                     self.view.backgroundColor = UIColor.red
                     self.playAgainButton.isHidden = false
                     self.homeButton.isHidden = false
                     
-                    //passes the data over to the gameover view without story board sugue
-                    let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
-                    svc.duelsWon = self.duelsWon
                 }
             }
             

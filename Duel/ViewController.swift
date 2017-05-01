@@ -8,7 +8,7 @@
 
 import UIKit
 import MultipeerConnectivity
-
+import CoreData
 
 class ViewController: UIViewController, MPCManagerDelegate{
     
@@ -27,6 +27,10 @@ class ViewController: UIViewController, MPCManagerDelegate{
         super.viewDidLoad()
         
        duelsWonLabel.text = "Duels Won: \(duelsWon)"
+        
+        let defaults: UserDefaults = UserDefaults.standard
+        let savedScore = defaults.integer(forKey: "highScore")
+        duelsWon = savedScore
         
        // appDelegate.mpcManager.disconnect
         // Do any additional setup after loading the view.
