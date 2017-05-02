@@ -25,7 +25,7 @@ class DuelViewController: UIViewController {
     var shot = AVAudioPlayer()
     var draw = AVAudioPlayer()
     var timer = Timer()
-    var time = arc4random_uniform(7) + 3
+    var time = 10
     var canShoot = true
     var duelsWon = 0
     var dead = false
@@ -51,10 +51,7 @@ class DuelViewController: UIViewController {
             print("viola")
         }
         
-        
-        
-        time = UInt32(appDelegate.mpcManager.time)
-        countLabel.text = "Hold phone upside down to start"
+        countLabel.text = "Hold phone down to start"
         
         
     }
@@ -96,6 +93,9 @@ class DuelViewController: UIViewController {
                         
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
                             let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                            self.canShoot = true
+                            self.dead = false
+                            self.time = 10
                             self.appDelegate.mpcManager.shot = false
                             self.appDelegate.mpcManager.dead = false
                             self.appDelegate.mpcManager.shot = false
@@ -111,7 +111,6 @@ class DuelViewController: UIViewController {
                         // shooting stuffs
                         self.shot.play()
                         self.appDelegate.mpcManager.shot = true
-                        self.bgm.stop()
                         self.appDelegate.mpcManager.sendData(dataToSend: "shot")
                         self.view.backgroundColor = UIColor.green
                         self.winLossText = "You Won!"
@@ -124,6 +123,9 @@ class DuelViewController: UIViewController {
                         
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
                             let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                            self.canShoot = true
+                            self.dead = false
+                            self.time = 10
                             self.appDelegate.mpcManager.shot = false
                             self.appDelegate.mpcManager.dead = false
                             self.appDelegate.mpcManager.shot = false
@@ -150,6 +152,9 @@ class DuelViewController: UIViewController {
                     
                     let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
                         let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+                        self.canShoot = true
+                        self.dead = false
+                        self.time = 10
                         self.appDelegate.mpcManager.shot = false
                         self.appDelegate.mpcManager.dead = false
                         self.appDelegate.mpcManager.shot = false
@@ -179,6 +184,7 @@ class DuelViewController: UIViewController {
         time -= 1
         if (time <= 0) {
             //countLabel.text = "FIRE!"
+            self.bgm.stop()
             self.draw.play()
             timer.invalidate()
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))

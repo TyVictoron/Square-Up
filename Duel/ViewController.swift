@@ -80,6 +80,8 @@ class ViewController: UIViewController, MPCManagerDelegate{
     {
         print("connectedWithPeer")
         OperationQueue.main.addOperation {
+            let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "FindDVC") as! FindDuelViewController
+            fdvc.duelsWon = self.duelsWon
             self.performSegue(withIdentifier: "gameSegue", sender: self)
         }
         
