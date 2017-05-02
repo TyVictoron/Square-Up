@@ -97,6 +97,9 @@ class DuelViewController: UIViewController {
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
                             let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                             self.appDelegate.mpcManager.shot = false
+                            self.appDelegate.mpcManager.dead = false
+                            self.appDelegate.mpcManager.shot = false
+                            self.appDelegate.mpcManager.holstered = false
                             svc.duelsWon = self.duelsWon
                             self.present(svc, animated: true, completion: nil)
                         }
@@ -122,6 +125,9 @@ class DuelViewController: UIViewController {
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
                             let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                             self.appDelegate.mpcManager.shot = false
+                            self.appDelegate.mpcManager.dead = false
+                            self.appDelegate.mpcManager.shot = false
+                            self.appDelegate.mpcManager.holstered = false
                             self.duelsWon += 1
                             svc.duelsWon = self.duelsWon
                             self.present(svc, animated: true, completion: nil)
@@ -145,6 +151,9 @@ class DuelViewController: UIViewController {
                     let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
                         let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
                         self.appDelegate.mpcManager.shot = false
+                        self.appDelegate.mpcManager.dead = false
+                        self.appDelegate.mpcManager.shot = false
+                        self.appDelegate.mpcManager.holstered = false
                         svc.duelsWon = self.duelsWon
                         self.present(svc, animated: true, completion: nil)
                     }
