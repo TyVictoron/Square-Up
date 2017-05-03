@@ -63,7 +63,6 @@ class DuelViewController: UIViewController {
         appDelegate.mpcManager.sendData(dataToSend: "\(time)")
         
         motionManager.accelerometerUpdateInterval = 0.2
-        
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) {(data, error) in
             
             if let myData = data

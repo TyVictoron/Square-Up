@@ -11,6 +11,10 @@ import MultipeerConnectivity
 
 class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var selectOpponentLabel: UILabel?
+    @IBOutlet weak var backDownLabel: UIButton!
+    @IBOutlet weak var connectingLabel: UILabel!
+    
     var duelsWon = 0
     
     internal func disconnect() {
@@ -56,7 +60,15 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         
         let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.default) { (alertAction) -> Void in
             self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
+            
+            // hiding stuff here
+            self.selectOpponentLabel?.isHidden = true
+            self.tableView.isHidden = true
+            self.backDownLabel.isHidden = true
+            self.connectingLabel.text = "Connecting"
+            self.connectingLabel.textColor = UIColor.red 
         }
+        
         let decline = UIAlertAction(title: "Decline", style: .default) { (alertAction) in
             print("decline")
         }
