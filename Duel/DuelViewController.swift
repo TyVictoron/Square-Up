@@ -25,7 +25,9 @@ class DuelViewController: UIViewController {
     var shot = AVAudioPlayer()
     var draw = AVAudioPlayer()
     var timer = Timer()
+    var afterFireTimer = Timer()
     var time = 10
+    var newTime = 0
     var canShoot = true
     var duelsWon = 0
     var dead = false
@@ -189,6 +191,10 @@ class DuelViewController: UIViewController {
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
         //countLabel.text = "\(time)"
+    }
+    
+    func update2() {
+        newTime += 1
     }
     
     // Sound setup
