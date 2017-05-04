@@ -87,6 +87,7 @@ class DuelViewController: UIViewController {
                         //self.playAgainButton.isHidden = false
                         //self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
+                        self.afterFireTimer.invalidate()
                         
                         self.winLossText = "You Lost"
                         
@@ -112,9 +113,10 @@ class DuelViewController: UIViewController {
                         // shooting stuffs
                         self.shot.play()
                         self.appDelegate.mpcManager.shot = true
-                        self.appDelegate.mpcManager.sendData(dataToSend: "shot")
+                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data
                         self.view.backgroundColor = UIColor.green
                         self.winLossText = "You Won!"
+                        self.afterFireTimer.invalidate()
                         
                         let defaults: UserDefaults = UserDefaults.standard
                         defaults.set(self.duelsWon, forKey: "highScore")
@@ -146,6 +148,8 @@ class DuelViewController: UIViewController {
                 else if (self.time > 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
                     print("Too Early")
                     self.winLossText = "You Went Early"
+                    
+                    self.afterFireTimer.invalidate()
                     
                     self.view.backgroundColor = UIColor.red
                     
@@ -188,6 +192,7 @@ class DuelViewController: UIViewController {
             self.bgm.stop()
             self.draw.play()
             timer.invalidate()
+            self.afterFireTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(DuelViewController.update2), userInfo: nil, repeats: true)
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }
         //countLabel.text = "\(time)"
