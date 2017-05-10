@@ -88,6 +88,7 @@ class DuelViewController: UIViewController {
                         //self.homeButton.isHidden = false
                         self.view.backgroundColor = UIColor.red
                         self.afterFireTimer.invalidate()
+                        self.appDelegate.mpcManager.sendData(dataToSend: "\(self.newTime)")
                         
                         self.winLossText = "You Lost"
                         
@@ -112,11 +113,18 @@ class DuelViewController: UIViewController {
                     } else {
                         // shooting stuffs
                         self.shot.play()
-                        self.appDelegate.mpcManager.shot = true
-                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data
+                        
                         self.view.backgroundColor = UIColor.green
                         self.winLossText = "You Won!"
                         self.afterFireTimer.invalidate()
+                        self.appDelegate.mpcManager.sendData(dataToSend: "\(self.newTime)")
+                        
+                        if self.newTime < self.appDelegate.mpcManager.recevedTime {
+                        
+                            self.appDelegate.mpcManager.shot = true
+                            self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data
+                         ////// not working yet
+                        }
                         
                         let defaults: UserDefaults = UserDefaults.standard
                         defaults.set(self.duelsWon, forKey: "highScore")
@@ -192,6 +200,8 @@ class DuelViewController: UIViewController {
             self.bgm.stop()
             self.draw.play()
             timer.invalidate()
+            
+            // start shoot time timer
             self.afterFireTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(DuelViewController.update2), userInfo: nil, repeats: true)
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         }

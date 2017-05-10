@@ -42,6 +42,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     var time = 10
     
+    var recevedTime = 0
+    
     // set up data for other players to see
     override init() {
         super.init()
@@ -134,6 +136,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         let text = NSString(data: data as! Data, encoding: String.Encoding.utf8.rawValue)!
         print(text)
         
+        
+        
         if text.contains("shot")
         {
             print("Dead")
@@ -141,9 +145,11 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }else if (text.contains("Holstered")) {
             print("Holstered")
             holstered = true
-        } else {
+        } else if (!text.contains("shot")) {
             print("You Shot First")
             shot = true
+        } else {
+            recevedTime = text.integerValue
         }
         
     }
