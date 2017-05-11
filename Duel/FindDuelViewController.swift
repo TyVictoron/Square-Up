@@ -49,6 +49,12 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     {
         print("lostPeer")
         tableView.reloadData()
+        
+        // incase of connection fail
+        self.selectOpponentLabel?.isHidden = false
+        self.tableView.isHidden = false
+        self.backDownLabel.isHidden = false
+        self.connectingLabel.isHidden = true
     }
     
     // if the device can connect to another device create a pop up and allow player to join

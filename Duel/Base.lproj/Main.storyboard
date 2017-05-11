@@ -37,15 +37,13 @@
                                 <color key="textColor" red="0.84650164842605591" green="0.23218286037445068" blue="0.15720474720001221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-8Z-voY">
-                                <rect key="frame" x="254" y="629" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Share score"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMX-Ua-I9Z">
-                                <rect key="frame" x="16" y="629" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Game center"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMX-Ua-I9Z">
+                                <rect key="frame" x="16" y="602" width="60" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="SCL-GY-fwH"/>
+                                    <constraint firstAttribute="height" constant="57" id="nPA-iz-skQ"/>
+                                </constraints>
+                                <state key="normal" title="Game center" image="trophy.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awp-BW-jGa">
                                 <rect key="frame" x="60" y="223" width="255" height="220"/>
@@ -57,15 +55,27 @@
                                     <segue destination="dVj-W2-gNL" kind="show" identifier="FDVC" id="5yZ-bq-uyS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-8Z-voY">
+                                <rect key="frame" x="279" y="602" width="80" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="422-NQ-6je"/>
+                                    <constraint firstAttribute="height" constant="57" id="eUt-QS-Crf"/>
+                                </constraints>
+                                <state key="normal" title="Share score" image="arrows.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="plt-9J-pOq" secondAttribute="trailing" id="0dv-oj-6s4"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Mxw-8Z-voY" secondAttribute="bottom" constant="8" id="4qg-RR-7j7"/>
+                            <constraint firstItem="dMX-Ua-I9Z" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="H0f-P2-ZB2"/>
+                            <constraint firstItem="Mxw-8Z-voY" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" id="IC6-3A-f1J"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="K53-mE-ImM"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="centerX" secondItem="plt-9J-pOq" secondAttribute="centerX" id="ZL2-AF-c9G"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="44" id="aTO-4K-fI6"/>
                             <constraint firstItem="plt-9J-pOq" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="mRg-Tj-VD0"/>
                             <constraint firstItem="plt-9J-pOq" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="n3v-kV-iHf"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="dMX-Ua-I9Z" secondAttribute="bottom" constant="8" id="z9b-j9-viN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -224,6 +234,8 @@
     </scenes>
     <resources>
         <image name="FindDuelButton.png" width="720" height="553"/>
+        <image name="arrows.png" width="861" height="688"/>
+        <image name="trophy.png" width="652" height="606"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cms-ab-2F7"/>

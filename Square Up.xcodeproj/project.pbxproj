@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		100132381E8C7AC600CB2B81 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 100132371E8C7AC600CB2B81 /* bgm.mp3 */; };
 		1001323C1E90CF9F00CB2B81 /* shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1001323B1E90CF9F00CB2B81 /* shot.mp3 */; };
+		100797E81EC41B66003491A8 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 100797E71EC41B66003491A8 /* trophy.png */; };
+		100797EA1EC41BC0003491A8 /* arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = 100797E91EC41BC0003491A8 /* arrows.png */; };
 		1010A3021EB0E97A00DECEED /* Draw.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1010A3011EB0E97A00DECEED /* Draw.mp3 */; };
 		1044B3B51E82D89F00918F38 /* icon-messages-app-27x20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044B3851E82D89F00918F38 /* icon-messages-app-27x20@1x.png */; };
 		1044B3B61E82D89F00918F38 /* icon-messages-app-27x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044B3861E82D89F00918F38 /* icon-messages-app-27x20@2x.png */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		100132371E8C7AC600CB2B81 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		1001323B1E90CF9F00CB2B81 /* shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shot.mp3; sourceTree = "<group>"; };
+		100797E71EC41B66003491A8 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trophy.png; path = DuelUITests/trophy.png; sourceTree = "<group>"; };
+		100797E91EC41BC0003491A8 /* arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows.png; sourceTree = "<group>"; };
 		1010A3011EB0E97A00DECEED /* Draw.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Draw.mp3; sourceTree = "<group>"; };
 		1044B3851E82D89F00918F38 /* icon-messages-app-27x20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-27x20@1x.png"; sourceTree = "<group>"; };
 		1044B3861E82D89F00918F38 /* icon-messages-app-27x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-messages-app-27x20@2x.png"; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				105CE22E1E7A4D8C00FF031C /* DuelTests */,
 				105CE2391E7A4D8C00FF031C /* DuelUITests */,
 				105CE24C1E7A552000FF031C /* unownstudioslogo.png */,
+				100797E71EC41B66003491A8 /* trophy.png */,
+				100797E91EC41BC0003491A8 /* arrows.png */,
 				100132371E8C7AC600CB2B81 /* bgm.mp3 */,
 				1010A3011EB0E97A00DECEED /* Draw.mp3 */,
 				1001323B1E90CF9F00CB2B81 /* shot.mp3 */,
@@ -428,8 +434,10 @@
 				100132381E8C7AC600CB2B81 /* bgm.mp3 in Resources */,
 				1044B3DA1E82D89F00918F38 /* iTunesArtwork@3x.png in Resources */,
 				105CE2221E7A4D8C00FF031C /* Assets.xcassets in Resources */,
+				100797EA1EC41BC0003491A8 /* arrows.png in Resources */,
 				1044B3D81E82D89F00918F38 /* iTunesArtwork@1x.png in Resources */,
 				1044B3C21E82D89F00918F38 /* Icon-App-20x20@1x.png in Resources */,
+				100797E81EC41B66003491A8 /* trophy.png in Resources */,
 				1044B3D91E82D89F00918F38 /* iTunesArtwork@2x.png in Resources */,
 				105CE24D1E7A552000FF031C /* unownstudioslogo.png in Resources */,
 				1044B3DE1E834FCC00918F38 /* FindDuelButton.png in Resources */,
