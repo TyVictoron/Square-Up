@@ -53,7 +53,7 @@ class DuelViewController: UIViewController {
             print("viola")
         }
         
-        countLabel.text = "Hold phone down to start"
+        countLabel.text = "Hold phone down."
         
         
     }
@@ -71,7 +71,7 @@ class DuelViewController: UIViewController {
             {
                 if myData.acceleration.y > 0.8 && self.canShoot == true && self.appDelegate.mpcManager.session.connectedPeers.count > 0
                 {
-                    print("holster position")
+                    //print("holster position")
                     self.appDelegate.mpcManager.sendData(dataToSend: "Holstered")
                     if (self.appDelegate.mpcManager.holstered == true) {
                         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(DuelViewController.update), userInfo: nil, repeats: true)
@@ -81,7 +81,7 @@ class DuelViewController: UIViewController {
                 }
                 if myData.acceleration.y < 0.15 && self.canShoot == false && self.time == 0 && self.view.backgroundColor != UIColor.red
                 {
-                    print("shooting position")
+                    //print("shooting position")
                     
                     if (self.appDelegate.mpcManager.dead == true) {
                         //self.playAgainButton.isHidden = false

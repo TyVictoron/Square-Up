@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -195,52 +193,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for opponent..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMS-hp-ocm">
-                                <rect key="frame" x="0.0" y="28" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="hmS-Vk-W92"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold phone down." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMS-hp-ocm">
+                                <rect key="frame" x="0.0" y="317.5" width="375" height="32.5"/>
+                                <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="32"/>
                                 <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uln-kg-XTQ">
-                                <rect key="frame" x="195" y="497" width="180" height="170"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="homeVC" id="aX7-RU-nLM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAi-Bg-6d6">
-                                <rect key="frame" x="7" y="497" width="180" height="170"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="Play Again?"/>
-                                <connections>
-                                    <action selector="playAgainButtonAction:" destination="UVK-vO-kWh" eventType="touchUpInside" id="b9T-RO-0si"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uln-kg-XTQ" firstAttribute="baseline" secondItem="EAi-Bg-6d6" secondAttribute="firstBaseline" id="57C-O3-icn"/>
-                            <constraint firstItem="uln-kg-XTQ" firstAttribute="leading" secondItem="EAi-Bg-6d6" secondAttribute="trailing" constant="8" symbolic="YES" id="6KL-hD-QJI"/>
-                            <constraint firstItem="Z6r-SD-1zq" firstAttribute="top" secondItem="EAi-Bg-6d6" secondAttribute="bottom" id="7nv-yr-Dv0"/>
-                            <constraint firstAttribute="trailing" secondItem="EAi-Bg-6d6" secondAttribute="trailing" constant="188" id="CKL-CJ-fUD"/>
-                            <constraint firstItem="uln-kg-XTQ" firstAttribute="firstBaseline" secondItem="EAi-Bg-6d6" secondAttribute="baseline" id="Hq2-oQ-eAg"/>
-                            <constraint firstItem="EAi-Bg-6d6" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" constant="7" id="S8r-gG-vgN"/>
-                            <constraint firstAttribute="trailing" secondItem="sMS-hp-ocm" secondAttribute="trailing" id="Sde-Ct-1CP"/>
-                            <constraint firstItem="sMS-hp-ocm" firstAttribute="top" secondItem="JJQ-Og-qEQ" secondAttribute="bottom" constant="8" id="V6F-3p-LP6"/>
-                            <constraint firstItem="uln-kg-XTQ" firstAttribute="trailing" secondItem="sMS-hp-ocm" secondAttribute="trailing" id="XJY-Yx-yNb"/>
-                            <constraint firstItem="EAi-Bg-6d6" firstAttribute="top" secondItem="sMS-hp-ocm" secondAttribute="bottom" constant="94" id="aTk-TS-9Mz"/>
-                            <constraint firstItem="sMS-hp-ocm" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" id="bv8-EF-Be8"/>
-                            <constraint firstItem="uln-kg-XTQ" firstAttribute="top" secondItem="EAi-Bg-6d6" secondAttribute="top" id="ojL-dn-eV0"/>
+                            <constraint firstAttribute="trailing" secondItem="sMS-hp-ocm" secondAttribute="trailing" id="4QQ-H0-Q4D"/>
+                            <constraint firstItem="sMS-hp-ocm" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" id="E3v-Wo-RJA"/>
+                            <constraint firstItem="sMS-hp-ocm" firstAttribute="centerX" secondItem="AHh-VI-mQB" secondAttribute="centerX" id="VT3-7N-Jpc"/>
+                            <constraint firstItem="sMS-hp-ocm" firstAttribute="top" secondItem="JJQ-Og-qEQ" secondAttribute="bottom" constant="297.5" id="W1A-SG-Ipd"/>
+                            <constraint firstItem="Z6r-SD-1zq" firstAttribute="top" secondItem="sMS-hp-ocm" secondAttribute="bottom" constant="317" id="fDw-tc-Edy"/>
+                            <constraint firstItem="sMS-hp-ocm" firstAttribute="leading" secondItem="AHh-VI-mQB" secondAttribute="leading" id="hKX-ew-Eaz"/>
+                            <constraint firstItem="sMS-hp-ocm" firstAttribute="centerY" secondItem="AHh-VI-mQB" secondAttribute="centerY" id="lIN-Ku-oTB"/>
+                            <constraint firstAttribute="trailing" secondItem="sMS-hp-ocm" secondAttribute="trailing" id="opA-7b-vKy"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="sMS-hp-ocm" id="83v-bM-Czb"/>
-                        <outlet property="homeButton" destination="uln-kg-XTQ" id="4gN-Yf-zlD"/>
-                        <outlet property="playAgainButton" destination="EAi-Bg-6d6" id="HOV-d7-0UQ"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="homeVC" id="Cms-ab-2F7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frp-LQ-U1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,6 +226,6 @@
         <image name="FindDuelButton.png" width="720" height="553"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9V6-AM-gFE"/>
+        <segue reference="Cms-ab-2F7"/>
     </inferredMetricsTieBreakers>
 </document>
