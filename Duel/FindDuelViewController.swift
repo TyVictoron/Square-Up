@@ -18,8 +18,14 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     var duelsWon = 0
     
     internal func disconnect() {
-        //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
         print("Disconnected")
+        
+        // incase of connection fail
+        self.selectOpponentLabel?.isHidden = false
+        self.tableView.isHidden = false
+        self.backDownLabel.isHidden = false
+        self.connectingLabel.text = ""
+        self.connectingLabel.isHidden = true
     }
 
     
@@ -49,12 +55,6 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     {
         print("lostPeer")
         tableView.reloadData()
-        
-        // incase of connection fail
-        self.selectOpponentLabel?.isHidden = false
-        self.tableView.isHidden = false
-        self.backDownLabel.isHidden = false
-        self.connectingLabel.isHidden = true
     }
     
     // if the device can connect to another device create a pop up and allow player to join
@@ -77,6 +77,12 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         
         let decline = UIAlertAction(title: "Decline", style: .default) { (alertAction) in
             print("decline")
+            
+            self.selectOpponentLabel?.isHidden = false
+            self.tableView.isHidden = false
+            self.backDownLabel.isHidden = false
+            self.connectingLabel.text = ""
+            self.connectingLabel.isHidden = true
         }
         
         
@@ -113,6 +119,13 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel!.text! = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "gameSegue") {
+            let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "gameSegue") as! DuelViewController
+            fdvc.duelsWon = duelsWon
+        }
     }
 
 }

@@ -647,6 +647,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SS74D43GDA;
 				INFOPLIST_FILE = Duel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.Square-Up";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,6 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SS74D43GDA;
 				INFOPLIST_FILE = Duel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Unown-Studios.Square-Up";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -145,12 +145,12 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }else if (text.contains("Holstered")) {
             print("Holstered")
             holstered = true
-        } else if (!text.contains("shot") && !text.contains("Holstered")) {
+        } else {
             print("You Shot First")
             shot = true
-        } else {
-            recevedTime = text.integerValue
-        }
+        } //else {
+            //recevedTime = text.integerValue
+        //}
         
     }
     

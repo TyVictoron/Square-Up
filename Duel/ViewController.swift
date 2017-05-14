@@ -16,7 +16,6 @@ class ViewController: UIViewController, MPCManagerDelegate{
     var duelsWon = 0
     
     internal func disconnect() {
-        //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
         print("Disconnected")
     }
 
@@ -26,25 +25,20 @@ class ViewController: UIViewController, MPCManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       duelsWonLabel.text = "Duels Won: \(duelsWon)"
-        
         let defaults: UserDefaults = UserDefaults.standard
         let savedScore = defaults.integer(forKey: "highScore")
         duelsWon = savedScore
         
-       // appDelegate.mpcManager.disconnect
-        // Do any additional setup after loading the view.
-        //appDelegate.mpcManager.session.cancelConnectPeer(appDelegate.mpcManager.peer)
-        //MCSession.disconnect(appDelegate.mpcManager.session)
+        duelsWonLabel.text = "Duels Won: \(duelsWon)"
+        
+        // disconnects session
         appDelegate.mpcManager.session.disconnect()
-        //appDelegate.mpcManager.browser.stopBrowsingForPeers()
     }
    
     // both reload the data in the table view
     func foundPeer()
     {
         print("foundPeer")
-        
     }
     
     func lostPeer()
@@ -65,7 +59,6 @@ class ViewController: UIViewController, MPCManagerDelegate{
         let decline = UIAlertAction(title: "Decline", style: .default) { (alertAction) in
             print("decline")
         }
-        
         
         alert.addAction(acceptAction)
         alert.addAction(decline)
