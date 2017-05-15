@@ -10,6 +10,7 @@ import UIKit
 import MultipeerConnectivity
 import CoreData
 import GameKit
+import Social
 
 class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControllerDelegate{
     
@@ -29,6 +30,24 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         print("Disconnected")
     }
 
+    
+    // share on twitter
+    @IBAction func shareButtonTapped(_ sender: Any)
+    {
+        // Check if Twitter is available
+        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)) {
+            // Create the tweet
+            let tweet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            tweet?.setInitialText("I want to share this App: ")
+            tweet?.add(UIImage(named: "shareImage"))
+            self.present(tweet!, animated: true, completion: nil)
+        } else {
+            // Twitter not available. Show a warning
+            let alert = UIAlertController(title: "Twitter", message: "Twitter not available", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     

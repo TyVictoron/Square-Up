@@ -112,7 +112,7 @@ class DuelViewController: UIViewController {
                     } else {
                         
                         self.appDelegate.mpcManager.shot = true
-                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data
+                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data 
                         self.view.backgroundColor = UIColor.green
                         self.winLossText = "You Won!"
                         // shooting stuffs
