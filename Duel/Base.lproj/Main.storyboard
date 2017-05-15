@@ -44,6 +44,9 @@
                                     <constraint firstAttribute="height" constant="57" id="nPA-iz-skQ"/>
                                 </constraints>
                                 <state key="normal" title="Game center" image="trophy.png"/>
+                                <connections>
+                                    <action selector="GameCenterButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hVf-vl-kXA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awp-BW-jGa">
                                 <rect key="frame" x="60" y="223" width="255" height="220"/>
