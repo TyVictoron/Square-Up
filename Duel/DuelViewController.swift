@@ -51,7 +51,7 @@ class DuelViewController: UIViewController {
         
         countLabel.text = "Hold phone down."
         
-        
+        print("Duels Won: ", duelsWon)
     }
     
     

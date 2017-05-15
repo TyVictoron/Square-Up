@@ -38,7 +38,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)) {
             // Create the tweet
             let tweet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            tweet?.setInitialText("I want to share this App: ")
+            tweet?.setInitialText("Check out Square Up on the app store: https://itunes.apple.com/us/app/square-up/id1216039627?ls=1&mt=8")
             tweet?.add(UIImage(named: "shareImage"))
             self.present(tweet!, animated: true, completion: nil)
         } else {
@@ -76,6 +76,8 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
                 print("Best Score submitted to your Leaderboard!")
             }
         }
+        
+        print("Duels Won: ", duelsWon)
     }
     
     func authenticateLocalPlayer() {

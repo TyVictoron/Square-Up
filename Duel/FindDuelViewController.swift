@@ -41,6 +41,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
+        print("Duels Won: ", duelsWon)
     }
     
     // both reload the data in the table view
