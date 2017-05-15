@@ -167,6 +167,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkG-aP-Aem">
+                                <rect key="frame" x="16" y="624" width="46" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="UVK-vO-kWh" kind="show" identifier="gameSegue" id="CSx-Te-MiQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.11078125000000005" green="0.11078125000000005" blue="0.11078125000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -190,7 +198,6 @@
                         <outlet property="connectingLabel" destination="1XS-hW-lEC" id="hdm-UZ-eM8"/>
                         <outlet property="selectOpponentLabel" destination="8ab-dY-4Ne" id="zp1-Mg-gxh"/>
                         <outlet property="tableView" destination="nyR-Bf-b0n" id="YYg-Co-zKQ"/>
-                        <segue destination="UVK-vO-kWh" kind="show" identifier="gameSegue" id="oHz-CZ-ZeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-Us-J02" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,6 +222,14 @@
                                 <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-Sn-gvM">
+                                <rect key="frame" x="16" y="629" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="homeVC" id="eAO-C4-rWI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -230,7 +245,6 @@
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="sMS-hp-ocm" id="83v-bM-Czb"/>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="homeVC" id="Cms-ab-2F7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frp-LQ-U1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,6 +258,6 @@
         <image name="trophy.png" width="652" height="606"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cms-ab-2F7"/>
+        <segue reference="eAO-C4-rWI"/>
     </inferredMetricsTieBreakers>
 </document>
