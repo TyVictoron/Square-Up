@@ -276,9 +276,9 @@
 			isa = PBXGroup;
 			children = (
 				105CE2141E7A4D8B00FF031C /* AppDelegate.swift */,
+				106A22E31E8175F800AB93E8 /* MPCManager.swift */,
 				105CE2481E7A54E000FF031C /* ViewController.swift */,
 				105CE24E1E7FA16900FF031C /* FindDuelViewController.swift */,
-				106A22E31E8175F800AB93E8 /* MPCManager.swift */,
 				105CE24A1E7A54ED00FF031C /* DuelViewController.swift */,
 				105CE21E1E7A4D8C00FF031C /* Main.storyboard */,
 				105CE2211E7A4D8C00FF031C /* Assets.xcassets */,

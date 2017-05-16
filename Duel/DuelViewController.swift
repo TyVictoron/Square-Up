@@ -37,6 +37,10 @@ class DuelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults: UserDefaults = UserDefaults.standard
+        let savedScore = defaults.integer(forKey: "highScore")
+        duelsWon = savedScore
+        
         // assign sound and play it
         bgm = self.setupAudioPlayerWithFile("bgm", type:"mp3")
         bgm.play()
@@ -117,6 +121,7 @@ class DuelViewController: UIViewController {
                         self.winLossText = "You Won!"
                         // shooting stuffs
                         self.shot.play()
+                        self.duelsWon += 1
                         
                         let defaults: UserDefaults = UserDefaults.standard
                         defaults.set(self.duelsWon, forKey: "highScore")
@@ -133,7 +138,6 @@ class DuelViewController: UIViewController {
                             self.appDelegate.mpcManager.dead = false
                             self.appDelegate.mpcManager.holstered = false
                             self.bgm.stop()
-                            self.duelsWon += 1
                             svc.duelsWon = self.duelsWon
                             self.present(svc, animated: true, completion: nil)
                         }

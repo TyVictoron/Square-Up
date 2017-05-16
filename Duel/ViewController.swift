@@ -17,13 +17,11 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
     var gcEnabled = Bool() // Check if the user has Game Center enabled
     var gcDefaultLeaderBoard = String() // Check the default leaderboardID
     
-    var score = 0
-    
     // IMPORTANT: replace the red string below with your own Leaderboard ID (the one you've set in iTunes Connect)
     let LEADERBOARD_ID = "SquareUpLB.ID"
     
-    
     @IBOutlet weak var duelsWonLabel: UILabel!
+    
     var duelsWon = 0
     
     internal func disconnect() {
@@ -58,17 +56,17 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         let savedScore = defaults.integer(forKey: "highScore")
         duelsWon = savedScore
         
+        // Call the GC authentication controller
+        authenticateLocalPlayer()
+        
         duelsWonLabel.text = "Duels Won: \(duelsWon)"
         
         // disconnects session
         appDelegate.mpcManager.session.disconnect()
         
-        // Call the GC authentication controller
-        authenticateLocalPlayer()
-        
         // Submit score to GC leaderboard
         let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
-        bestScoreInt.value = Int64(score)
+        bestScoreInt.value = Int64(duelsWon)
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {
                 print(error!.localizedDescription)
@@ -93,7 +91,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
                 
                 // Get the default leaderboard ID
                 localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
-                    if error != nil { print(error)
+                    if error != nil { print(error as Any)
                     } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
                 })
                 
@@ -101,7 +99,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
                 // 3. Game center is not enabled on the users device
                 self.gcEnabled = false
                 print("Local player could not be authenticated!")
-                print(error)
+                print(error as Any)
             }
         }
     }
@@ -160,7 +158,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         OperationQueue.main.addOperation {
             let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "FindDVC") as! FindDuelViewController
             fdvc.duelsWon = self.duelsWon
-            self.performSegue(withIdentifier: "gameSegue", sender: self)
+            self.performSegue(withIdentifier: "FDVC", sender: self)
         }
         
     }

@@ -15,8 +15,6 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     @IBOutlet weak var backDownLabel: UIButton!
     @IBOutlet weak var connectingLabel: UILabel!
     
-    var duelsWon = 0
-    
     internal func disconnect() {
         print("Disconnected")
         
@@ -28,12 +26,17 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         self.connectingLabel.isHidden = true
     }
 
+    var duelsWon = 0
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults: UserDefaults = UserDefaults.standard
+        let savedScore = defaults.integer(forKey: "highScore")
+        duelsWon = savedScore
         
         appDelegate.mpcManager.delegate = self
         appDelegate.mpcManager.browser.startBrowsingForPeers()
@@ -102,7 +105,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         OperationQueue.main.addOperation {
             let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "gameSegue") as! DuelViewController
             fdvc.duelsWon = self.duelsWon
-            self.performSegue(withIdentifier: "gameSegue", sender: self)
+            self.performSegue(withIdentifier: "gameVC", sender: self)
         }
         
     }
@@ -123,7 +126,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "gameSegue") {
+        if (segue.identifier == "gameVC") {
             let fdvc = self.storyboard?.instantiateViewController(withIdentifier: "gameSegue") as! DuelViewController
             fdvc.duelsWon = duelsWon
         }
