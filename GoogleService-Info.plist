@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>563655906315-v7js85njqk71d4o4sgh26ng7eq2i01ar.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.563655906315-v7js85njqk71d4o4sgh26ng7eq2i01ar</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNwyhY21UjMs4judR0cMh7a7cHPUyBRio</string>
+	<key>GCM_SENDER_ID</key>
+	<string>563655906315</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Unown-Studios.Square-Up</string>
+	<key>PROJECT_ID</key>
+	<string>square-up-934de</string>
+	<key>STORAGE_BUCKET</key>
+	<string>square-up-934de.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:563655906315:ios:8509338340d623e7</string>
+	<key>DATABASE_URL</key>
+	<string>https://square-up-934de.firebaseio.com</string>
+</dict>
+</plist>

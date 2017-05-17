@@ -64,6 +64,8 @@
 		105CE24D1E7A552000FF031C /* unownstudioslogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 105CE24C1E7A552000FF031C /* unownstudioslogo.png */; };
 		105CE24F1E7FA16900FF031C /* FindDuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE24E1E7FA16900FF031C /* FindDuelViewController.swift */; };
 		106A22E41E8175F800AB93E8 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106A22E31E8175F800AB93E8 /* MPCManager.swift */; };
+		10A4FF0E1ECBFC5600E2594E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A4FF0D1ECBFC5600E2594E /* GoogleMobileAds.framework */; };
+		10A4FF101ECBFC8100E2594E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10A4FF0F1ECBFC8100E2594E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		105CE24C1E7A552000FF031C /* unownstudioslogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unownstudioslogo.png; sourceTree = "<group>"; };
 		105CE24E1E7FA16900FF031C /* FindDuelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDuelViewController.swift; sourceTree = "<group>"; };
 		106A22E31E8175F800AB93E8 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
+		10A4FF0D1ECBFC5600E2594E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = DuelUITests/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		10A4FF0F1ECBFC8100E2594E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A4FF0E1ECBFC5600E2594E /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +262,7 @@
 				1010A3011EB0E97A00DECEED /* Draw.mp3 */,
 				1001323B1E90CF9F00CB2B81 /* shot.mp3 */,
 				1044B3DD1E834FCC00918F38 /* FindDuelButton.png */,
+				10A4FF0D1ECBFC5600E2594E /* GoogleMobileAds.framework */,
 				1044B3751E82D89F00918F38 /* SquareUpIcon */,
 				105CE2121E7A4D8B00FF031C /* Products */,
 			);
@@ -285,6 +291,7 @@
 				105CE2231E7A4D8C00FF031C /* LaunchScreen.storyboard */,
 				1044B3DC1E834CF200918F38 /* Saddlebag.ttf */,
 				105CE2261E7A4D8C00FF031C /* Info.plist */,
+				10A4FF0F1ECBFC8100E2594E /* GoogleService-Info.plist */,
 			);
 			path = Duel;
 			sourceTree = "<group>";
@@ -444,6 +451,7 @@
 				1044B3BC1E82D89F00918F38 /* icon-messages-app-iPhone-60x45@3x.png in Resources */,
 				1044B3C11E82D89F00918F38 /* Contents.json in Resources */,
 				1044B3BF1E82D89F00918F38 /* icon-messages-transcript-32x24@2x.png in Resources */,
+				10A4FF101ECBFC8100E2594E /* GoogleService-Info.plist in Resources */,
 				1044B3B81E82D89F00918F38 /* icon-messages-app-iPadAir-67x50@2x.png in Resources */,
 				105CE2251E7A4D8C00FF031C /* LaunchScreen.storyboard in Resources */,
 				1044B3C61E82D89F00918F38 /* Icon-App-29x29@2x.png in Resources */,
@@ -646,6 +654,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SS74D43GDA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DuelUITests",
+				);
 				INFOPLIST_FILE = Duel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -660,6 +672,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SS74D43GDA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DuelUITests",
+				);
 				INFOPLIST_FILE = Duel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -11,6 +11,7 @@ import AVFoundation
 import CoreMotion
 import AudioToolbox
 import CoreData
+import GoogleMobileAds
 
 class DuelViewController: UIViewController {
     
@@ -32,10 +33,15 @@ class DuelViewController: UIViewController {
     var winLossText = ""
     var hasShot = false
     
+    /// The interstitial ad.
+    var interstitial: GADInterstitial!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         
         let defaults: UserDefaults = UserDefaults.standard
         let savedScore = defaults.integer(forKey: "highScore")
@@ -56,6 +62,9 @@ class DuelViewController: UIViewController {
         countLabel.text = "Hold phone down."
         
         print("Duels Won: ", duelsWon)
+        
+        let request = GADRequest()
+        interstitial.load(request)
     }
     
     
@@ -95,6 +104,12 @@ class DuelViewController: UIViewController {
                         defaults.set(self.duelsWon, forKey: "highScore")
                         defaults.synchronize()
                         
+                        if self.interstitial.isReady {
+                            self.interstitial.present(fromRootViewController: self)
+                        } else {
+                            print("Ad wasn't ready")
+                        }
+                        
                         let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                         
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
@@ -126,6 +141,12 @@ class DuelViewController: UIViewController {
                         let defaults: UserDefaults = UserDefaults.standard
                         defaults.set(self.duelsWon, forKey: "highScore")
                         defaults.synchronize()
+                        
+                        if self.interstitial.isReady {
+                            self.interstitial.present(fromRootViewController: self)
+                        } else {
+                            print("Ad wasn't ready")
+                        }
                         
                         let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                         
@@ -161,6 +182,12 @@ class DuelViewController: UIViewController {
                     defaults.set(self.duelsWon, forKey: "highScore")
                     defaults.synchronize()
                     
+                    if self.interstitial.isReady {
+                        self.interstitial.present(fromRootViewController: self)
+                    } else {
+                        print("Ad wasn't ready")
+                    }
+                    
                     let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                     
                     let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
@@ -186,6 +213,17 @@ class DuelViewController: UIViewController {
             
         }
  
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self as? GADInterstitialDelegate
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
     }
     
     func update() {
