@@ -41,7 +41,10 @@ class DuelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        //let request = GADRequest()
+        //request.testDevices = [ kGADSimulatorID , "756b788c48f23c1b559c95e5bd8d9abf" ]
+        
+        interstitial = createAndLoadInterstitial()
         
         let defaults: UserDefaults = UserDefaults.standard
         let savedScore = defaults.integer(forKey: "highScore")
@@ -62,9 +65,6 @@ class DuelViewController: UIViewController {
         countLabel.text = "Hold phone down."
         
         print("Duels Won: ", duelsWon)
-        
-        let request = GADRequest()
-        interstitial.load(request)
     }
     
     
@@ -216,7 +216,7 @@ class DuelViewController: UIViewController {
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-5788120822235976/4041699644")
         interstitial.delegate = self as? GADInterstitialDelegate
         interstitial.load(GADRequest())
         return interstitial
@@ -264,6 +264,13 @@ class DuelViewController: UIViewController {
         //4
         return audioPlayer!
     }
+    
+    
+    @IBAction func devButtonForSimulator(_ sender: Any) {
+        
+        self.appDelegate.mpcManager.sendData(dataToSend: "Holstered")
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "homeVC") {
