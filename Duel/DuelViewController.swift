@@ -104,12 +104,6 @@ class DuelViewController: UIViewController {
                         defaults.set(self.duelsWon, forKey: "highScore")
                         defaults.synchronize()
                         
-                        if self.interstitial.isReady {
-                            self.interstitial.present(fromRootViewController: self)
-                        } else {
-                            print("Ad wasn't ready")
-                        }
-                        
                         let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                         
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
@@ -122,7 +116,13 @@ class DuelViewController: UIViewController {
                             self.appDelegate.mpcManager.holstered = false
                             self.bgm.stop()
                             svc.duelsWon = self.duelsWon
-                            self.present(svc, animated: true, completion: nil)
+                            
+                            if self.interstitial.isReady {
+                                self.interstitial.present(fromRootViewController: self)
+                            } else {
+                                print("Ad wasn't ready")
+                                self.present(svc, animated: true, completion: nil)
+                            }
                         }
                         
                         alert.addAction(playAgainAction)
@@ -142,12 +142,6 @@ class DuelViewController: UIViewController {
                         defaults.set(self.duelsWon, forKey: "highScore")
                         defaults.synchronize()
                         
-                        if self.interstitial.isReady {
-                            self.interstitial.present(fromRootViewController: self)
-                        } else {
-                            print("Ad wasn't ready")
-                        }
-                        
                         let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                         
                         let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
@@ -160,7 +154,13 @@ class DuelViewController: UIViewController {
                             self.appDelegate.mpcManager.holstered = false
                             self.bgm.stop()
                             svc.duelsWon = self.duelsWon
-                            self.present(svc, animated: true, completion: nil)
+                            
+                            if self.interstitial.isReady {
+                                self.interstitial.present(fromRootViewController: self)
+                            } else {
+                                print("Ad wasn't ready")
+                                self.present(svc, animated: true, completion: nil)
+                            }
                         }
                         
                         alert.addAction(playAgainAction)
@@ -182,12 +182,6 @@ class DuelViewController: UIViewController {
                     defaults.set(self.duelsWon, forKey: "highScore")
                     defaults.synchronize()
                     
-                    if self.interstitial.isReady {
-                        self.interstitial.present(fromRootViewController: self)
-                    } else {
-                        print("Ad wasn't ready")
-                    }
-                    
                     let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
                     
                     let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
@@ -197,11 +191,16 @@ class DuelViewController: UIViewController {
                         self.time = 10
                         self.appDelegate.mpcManager.shot = false
                         self.appDelegate.mpcManager.dead = false
-                        self.appDelegate.mpcManager.shot = false
                         self.appDelegate.mpcManager.holstered = false
                         self.bgm.stop()
                         svc.duelsWon = self.duelsWon
-                        self.present(svc, animated: true, completion: nil)
+                        
+                        if self.interstitial.isReady {
+                            self.interstitial.present(fromRootViewController: self)
+                        } else {
+                            print("Ad wasn't ready")
+                            self.present(svc, animated: true, completion: nil)
+                        }
                     }
                     
                     alert.addAction(playAgainAction)
@@ -224,6 +223,8 @@ class DuelViewController: UIViewController {
     
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         interstitial = createAndLoadInterstitial()
+        let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+        self.present(svc, animated: true, completion: nil)
     }
     
     func update() {
