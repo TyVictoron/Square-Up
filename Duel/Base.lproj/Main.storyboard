@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="88" id="MWW-ng-P73"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="38"/>
-                                <color key="textColor" red="0.84650164842605591" green="0.23218286037445068" blue="0.15720474720001221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMX-Ua-I9Z">
@@ -59,12 +59,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-8Z-voY">
-                                <rect key="frame" x="279" y="602" width="80" height="57"/>
+                                <rect key="frame" x="301" y="601" width="58" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="422-NQ-6je"/>
-                                    <constraint firstAttribute="height" constant="57" id="eUt-QS-Crf"/>
+                                    <constraint firstAttribute="width" constant="58" id="saD-8W-KaY"/>
                                 </constraints>
-                                <state key="normal" title="Share score" image="arrows.png"/>
+                                <state key="normal" title="Share score" image="twitterShare.png"/>
                                 <connections>
                                     <action selector="shareButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="q32-Af-JMV"/>
                                 </connections>
@@ -73,14 +72,15 @@
                         <color key="backgroundColor" red="0.10979197174310684" green="0.10981062799692154" blue="0.10978562384843826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="plt-9J-pOq" secondAttribute="trailing" id="0dv-oj-6s4"/>
-                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Mxw-8Z-voY" secondAttribute="bottom" constant="8" id="4qg-RR-7j7"/>
                             <constraint firstItem="dMX-Ua-I9Z" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" id="H0f-P2-ZB2"/>
-                            <constraint firstItem="Mxw-8Z-voY" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" id="IC6-3A-f1J"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="K53-mE-ImM"/>
+                            <constraint firstItem="Mxw-8Z-voY" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailingMargin" id="Nst-LJ-RCF"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="centerX" secondItem="plt-9J-pOq" secondAttribute="centerX" id="ZL2-AF-c9G"/>
                             <constraint firstItem="Awp-BW-jGa" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="44" id="aTO-4K-fI6"/>
                             <constraint firstItem="plt-9J-pOq" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="mRg-Tj-VD0"/>
                             <constraint firstItem="plt-9J-pOq" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="n3v-kV-iHf"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="Mxw-8Z-voY" secondAttribute="bottom" constant="8" symbolic="YES" id="n9n-Ws-ET5"/>
+                            <constraint firstItem="Mxw-8Z-voY" firstAttribute="centerY" secondItem="dMX-Ua-I9Z" secondAttribute="centerY" id="u9u-7Y-58z"/>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="dMX-Ua-I9Z" secondAttribute="bottom" constant="8" id="z9b-j9-viN"/>
                         </constraints>
                     </view>
@@ -107,11 +107,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-dY-4Ne">
                                 <rect key="frame" x="16" y="20" width="343" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="U7F-DY-Mic"/>
-                                    <constraint firstAttribute="height" constant="42" id="ytv-YF-rMu"/>
+                                    <constraint firstAttribute="height" constant="42" id="dFt-zt-Rgs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="38"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nyR-Bf-b0n">
@@ -147,10 +146,6 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-Ef-HoQ">
                                 <rect key="frame" x="90" y="595" width="195" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="JYP-rC-W9f"/>
-                                    <constraint firstAttribute="height" constant="52" id="slQ-ND-wzt"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="32"/>
                                 <state key="normal" title="Back Down"/>
                                 <connections>
@@ -160,16 +155,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-hW-lEC">
                                 <rect key="frame" x="0.0" y="278" width="375" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Dru-5r-R24"/>
-                                    <constraint firstAttribute="height" constant="110" id="Gty-db-Q48"/>
+                                    <constraint firstAttribute="height" constant="110" id="p4r-Jg-MhY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="44"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkG-aP-Aem">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkG-aP-Aem">
                                 <rect key="frame" x="16" y="624" width="46" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="UVK-vO-kWh" kind="show" identifier="gameVC" id="CSx-Te-MiQ"/>
@@ -178,19 +171,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.11078125000000005" green="0.11078125000000005" blue="0.11078125000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1XS-hW-lEC" firstAttribute="centerX" secondItem="YLH-Dy-BYe" secondAttribute="centerX" id="33Y-Zo-qXz"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="nyR-Bf-b0n" secondAttribute="leading" id="1OQ-Jq-Azo"/>
                             <constraint firstItem="nyR-Bf-b0n" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" id="5un-tV-R7m"/>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" id="EZd-m7-amD"/>
-                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="top" secondItem="8ab-dY-4Ne" secondAttribute="bottom" constant="8" id="Fxq-8C-u3a"/>
-                            <constraint firstAttribute="trailing" secondItem="1XS-hW-lEC" secondAttribute="trailing" id="JcF-35-G9b"/>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="top" secondItem="Ddc-6P-1GF" secondAttribute="bottom" id="UsQ-NS-5Dh"/>
-                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" constant="74" id="eiQ-FH-ewj"/>
-                            <constraint firstItem="1XS-hW-lEC" firstAttribute="centerY" secondItem="YLH-Dy-BYe" secondAttribute="centerY" id="fvq-Mp-Zoj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8Of-Ef-HoQ" secondAttribute="trailing" constant="74" id="kEe-Sd-2Pd"/>
-                            <constraint firstItem="1XS-hW-lEC" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leading" id="mA3-dq-HGq"/>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="trailing" secondItem="YLH-Dy-BYe" secondAttribute="trailingMargin" id="mP0-hb-7B3"/>
+                            <constraint firstAttribute="bottom" secondItem="8Of-Ef-HoQ" secondAttribute="bottom" constant="20" symbolic="YES" id="Afa-2G-Nwa"/>
+                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="centerX" secondItem="1XS-hW-lEC" secondAttribute="centerX" id="Pzr-1M-OSY"/>
+                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="top" secondItem="nyR-Bf-b0n" secondAttribute="bottom" constant="8" symbolic="YES" id="Ss9-QP-kcX"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="top" secondItem="Ddc-6P-1GF" secondAttribute="bottom" id="Y2H-bb-CYo"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="trailing" secondItem="nyR-Bf-b0n" secondAttribute="trailing" id="arS-hK-WdZ"/>
+                            <constraint firstItem="1XS-hW-lEC" firstAttribute="centerY" secondItem="YLH-Dy-BYe" secondAttribute="centerY" id="fQP-11-YKs"/>
+                            <constraint firstItem="1XS-hW-lEC" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leading" id="gzO-at-7Ha"/>
                             <constraint firstItem="nyR-Bf-b0n" firstAttribute="trailing" secondItem="YLH-Dy-BYe" secondAttribute="trailingMargin" id="nuk-aq-tQ2"/>
-                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="top" secondItem="nyR-Bf-b0n" secondAttribute="bottom" constant="8" id="ukp-AU-pDw"/>
+                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="leading" secondItem="zkG-aP-Aem" secondAttribute="trailing" constant="28" id="oiV-CQ-ZAW"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="zkG-aP-Aem" secondAttribute="leading" id="tYU-by-lIh"/>
+                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="top" secondItem="8ab-dY-4Ne" secondAttribute="bottom" constant="8" symbolic="YES" id="wZi-1u-eQL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -262,8 +255,8 @@
     </scenes>
     <resources>
         <image name="FindDuelButton.png" width="720" height="553"/>
-        <image name="arrows.png" width="861" height="688"/>
         <image name="trophy.png" width="652" height="606"/>
+        <image name="twitterShare.png" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eAO-C4-rWI"/>

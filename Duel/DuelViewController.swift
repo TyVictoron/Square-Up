@@ -13,7 +13,7 @@ import AudioToolbox
 import CoreData
 import GoogleMobileAds
 
-class DuelViewController: UIViewController {
+class DuelViewController: UIViewController, GADInterstitialDelegate {
     
     var motionManager = CMMotionManager()
 
@@ -197,6 +197,7 @@ class DuelViewController: UIViewController {
                         
                         if self.interstitial.isReady {
                             self.interstitial.present(fromRootViewController: self)
+                            //self.present(svc, animated: true, completion: nil) // only for bypassing the ad
                         } else {
                             print("Ad wasn't ready")
                             self.present(svc, animated: true, completion: nil)
@@ -215,7 +216,7 @@ class DuelViewController: UIViewController {
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-5788120822235976/4041699644")
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         interstitial.delegate = self as? GADInterstitialDelegate
         interstitial.load(GADRequest())
         return interstitial
