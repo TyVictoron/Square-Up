@@ -56,8 +56,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         let savedScore = defaults.integer(forKey: "highScore")
         duelsWon = savedScore
         
-        // Call the GC authentication controller
-        authenticateLocalPlayer()
+        
         
         duelsWonLabel.text = "Duels Won: \(duelsWon)"
         
@@ -74,6 +73,9 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
                 print("Best Score submitted to your Leaderboard!")
             }
         }
+        
+        // Call the GC authentication controller
+        authenticateLocalPlayer()
         
         print("Duels Won: ", duelsWon)
     }
