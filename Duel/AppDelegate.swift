@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var mpcManager: MPCManager!
+    @objc var mpcManager: MPCManager!
     
     var window: UIWindow?
     

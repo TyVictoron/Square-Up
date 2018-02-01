@@ -14,17 +14,17 @@ import Social
 
 class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControllerDelegate{
     
-    var gcEnabled = Bool() // Check if the user has Game Center enabled
-    var gcDefaultLeaderBoard = String() // Check the default leaderboardID
+    @objc var gcEnabled = Bool() // Check if the user has Game Center enabled
+    @objc var gcDefaultLeaderBoard = String() // Check the default leaderboardID
     
     // IMPORTANT: replace the red string below with your own Leaderboard ID (the one you've set in iTunes Connect)
-    let LEADERBOARD_ID = "SquareUpLB.ID"
+    @objc let LEADERBOARD_ID = "SquareUpLB.ID"
     
     @IBOutlet weak var duelsWonLabel: UILabel!
     
-    var duelsWon = 0
+    @objc var duelsWon = 0
     
-    internal func disconnect() {
+    @objc internal func disconnect() {
         print("Disconnected")
     }
 
@@ -47,7 +47,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         }
     }
 
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @objc let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +55,6 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         let defaults: UserDefaults = UserDefaults.standard
         let savedScore = defaults.integer(forKey: "highScore")
         duelsWon = savedScore
-        
-        
         
         duelsWonLabel.text = "Duels Won: \(duelsWon)"
         
@@ -80,7 +78,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
         print("Duels Won: ", duelsWon)
     }
     
-    func authenticateLocalPlayer() {
+    @objc func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
         
         localPlayer.authenticateHandler = {(ViewController, error) -> Void in
@@ -121,18 +119,18 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
     }
     
     // both reload the data in the table view
-    func foundPeer()
+    @objc func foundPeer()
     {
         print("foundPeer")
     }
     
-    func lostPeer()
+    @objc func lostPeer()
     {
         print("lostPeer")
     }
     
     // if the device can connect to another device create a pop up and allow player to join
-    func invitationWasReceived(fromPeer: String)
+    @objc func invitationWasReceived(fromPeer: String)
     {
         print("invitationWasReceived")
         //appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
@@ -154,7 +152,7 @@ class ViewController: UIViewController, MPCManagerDelegate, GKGameCenterControll
     }
     
     // called if invitation was accepted and take player to game view
-    func connectedWithPeer(peerID: MCPeerID)
+    @objc func connectedWithPeer(peerID: MCPeerID)
     {
         print("connectedWithPeer")
         OperationQueue.main.addOperation {

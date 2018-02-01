@@ -15,7 +15,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     @IBOutlet weak var backDownLabel: UIButton!
     @IBOutlet weak var connectingLabel: UILabel!
     
-    internal func disconnect() {
+    @objc internal func disconnect() {
         print("Disconnected")
         
         // incase of connection fail
@@ -26,9 +26,9 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
         self.connectingLabel.isHidden = true
     }
 
-    var duelsWon = 0
+    @objc var duelsWon = 0
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @objc let appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -48,21 +48,21 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     }
     
     // both reload the data in the table view
-    func foundPeer()
+    @objc func foundPeer()
     {
         print("foundPeer")
         tableView.reloadData()
         
     }
     
-    func lostPeer()
+    @objc func lostPeer()
     {
         print("lostPeer")
         tableView.reloadData()
     }
     
     // if the device can connect to another device create a pop up and allow player to join
-    func invitationWasReceived(fromPeer: String)
+    @objc func invitationWasReceived(fromPeer: String)
     {
         print("invitationWasReceived")
         appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
@@ -99,7 +99,7 @@ class FindDuelViewController: UIViewController, MPCManagerDelegate, UITableViewD
     }
     
     // called if invitation was accepted and take player to game view
-    func connectedWithPeer(peerID: MCPeerID)
+    @objc func connectedWithPeer(peerID: MCPeerID)
     {
         print("connectedWithPeer")
         OperationQueue.main.addOperation {

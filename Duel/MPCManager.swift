@@ -90,7 +90,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     
     // MARK: MCNearbyServiceAdvertiserDelegate method implementation
-
+    
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
         print(error.localizedDescription)
@@ -118,8 +118,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             print("No Longer connected to session: \(session)")
             delegate?.disconnect()
             
-        default:
-            print("Did not connect to session: \(session)")
         }
     }
     
@@ -129,7 +127,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     // holds the data for the current sesion that is being played such as the bullet and position and rotations
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print("SOMETHING HAPPENED YAY!!!")
         let dictionary: [String: AnyObject] = ["data": data as AnyObject, "fromPeer": peerID]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "receivedMPCDataNotification"), object: dictionary)
         let data = dictionary["data"]
@@ -140,16 +137,16 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
         if text.contains("shot")
         {
-            print("Dead")
+            print(peerID.displayName + " isDead")
             dead = true
         }else if (text.contains("Holstered")) {
-            print("Holstered")
+            print(peerID.displayName + " is Holstered")
             holstered = true
         } else {
-            print("You Shot First")
+            print(peerID.displayName + " Shot First")
             shot = true
         } //else {
-            //recevedTime = text.integerValue
+        //recevedTime = text.integerValue
         //}
         
     }
@@ -157,14 +154,16 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     // functions that do nothing but need to be in as to make the compiler not crash
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) { }
     
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) { }
+    func session(_: MCSession, didFinishReceivingResourceWithName: String, fromPeer: MCPeerID, at: URL?, withError: Error?){}
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) { }
+    
+    func session(_: MCSession, didReceiveCertificate: [Any]?, fromPeer: MCPeerID, certificateHandler: @escaping (Bool) -> Void){}
     
     // sends data to the other device via the sesion
     func sendData(dataToSend: String)
     {
-         print("sending... : " + dataToSend)
+        print("sending... : " + dataToSend)
         
         if session.connectedPeers.count > 0
         {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,7 +107,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Opponent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-dY-4Ne">
                                 <rect key="frame" x="16" y="20" width="343" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="dFt-zt-Rgs"/>
+                                    <constraint firstAttribute="height" constant="42" id="DVJ-hs-eVu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="38"/>
                                 <color key="textColor" red="0.91884142160415649" green="0.25355187058448792" blue="0.17157217860221863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,10 +116,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nyR-Bf-b0n">
                                 <rect key="frame" x="16" y="70" width="343" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="XXA-xD-oVQ"/>
-                                    <constraint firstAttribute="height" constant="517" id="ZwE-jh-lI1"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="aaM-dZ-TMh" style="IBUITableViewCellStyleDefault" id="7jQ-CA-29Q">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
@@ -146,6 +142,9 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Of-Ef-HoQ">
                                 <rect key="frame" x="90" y="595" width="195" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="So9-2A-1WS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="32"/>
                                 <state key="normal" title="Back Down"/>
                                 <connections>
@@ -155,7 +154,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-hW-lEC">
                                 <rect key="frame" x="0.0" y="278" width="375" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="p4r-Jg-MhY"/>
+                                    <constraint firstAttribute="height" constant="110" id="nhZ-qu-yyL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Saddlebag-Black" family="Saddlebag" pointSize="44"/>
                                 <nil key="textColor"/>
@@ -171,19 +170,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.11078125000000005" green="0.11078125000000005" blue="0.11078125000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="nyR-Bf-b0n" secondAttribute="leading" id="1OQ-Jq-Azo"/>
-                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" id="5un-tV-R7m"/>
-                            <constraint firstAttribute="bottom" secondItem="8Of-Ef-HoQ" secondAttribute="bottom" constant="20" symbolic="YES" id="Afa-2G-Nwa"/>
-                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="centerX" secondItem="1XS-hW-lEC" secondAttribute="centerX" id="Pzr-1M-OSY"/>
-                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="top" secondItem="nyR-Bf-b0n" secondAttribute="bottom" constant="8" symbolic="YES" id="Ss9-QP-kcX"/>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="top" secondItem="Ddc-6P-1GF" secondAttribute="bottom" id="Y2H-bb-CYo"/>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="trailing" secondItem="nyR-Bf-b0n" secondAttribute="trailing" id="arS-hK-WdZ"/>
-                            <constraint firstItem="1XS-hW-lEC" firstAttribute="centerY" secondItem="YLH-Dy-BYe" secondAttribute="centerY" id="fQP-11-YKs"/>
-                            <constraint firstItem="1XS-hW-lEC" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leading" id="gzO-at-7Ha"/>
-                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="trailing" secondItem="YLH-Dy-BYe" secondAttribute="trailingMargin" id="nuk-aq-tQ2"/>
-                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="leading" secondItem="zkG-aP-Aem" secondAttribute="trailing" constant="28" id="oiV-CQ-ZAW"/>
-                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="zkG-aP-Aem" secondAttribute="leading" id="tYU-by-lIh"/>
-                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="top" secondItem="8ab-dY-4Ne" secondAttribute="bottom" constant="8" symbolic="YES" id="wZi-1u-eQL"/>
+                            <constraint firstItem="1XS-hW-lEC" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leading" id="1FQ-7D-bAj"/>
+                            <constraint firstAttribute="trailing" secondItem="1XS-hW-lEC" secondAttribute="trailing" id="AkN-SQ-1Gn"/>
+                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="top" secondItem="8ab-dY-4Ne" secondAttribute="bottom" constant="8" symbolic="YES" id="Dfi-oK-rxA"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="centerX" secondItem="1XS-hW-lEC" secondAttribute="centerX" id="Kyg-uJ-QNK"/>
+                            <constraint firstAttribute="bottom" secondItem="8Of-Ef-HoQ" secondAttribute="bottom" constant="20" symbolic="YES" id="LIl-F2-j20"/>
+                            <constraint firstItem="nyR-Bf-b0n" firstAttribute="leading" secondItem="zkG-aP-Aem" secondAttribute="leading" id="MrW-F9-96u"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="YLH-Dy-BYe" secondAttribute="leadingMargin" id="UjY-hu-8oi"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="leading" secondItem="nyR-Bf-b0n" secondAttribute="leading" id="YeC-Q9-bN4"/>
+                            <constraint firstItem="8Of-Ef-HoQ" firstAttribute="top" secondItem="nyR-Bf-b0n" secondAttribute="bottom" constant="8" symbolic="YES" id="ZIz-9J-rSL"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="trailing" secondItem="nyR-Bf-b0n" secondAttribute="trailing" id="cLd-RQ-5mS"/>
+                            <constraint firstItem="1XS-hW-lEC" firstAttribute="centerX" secondItem="8Of-Ef-HoQ" secondAttribute="centerX" id="fk4-CF-YEs"/>
+                            <constraint firstItem="8ab-dY-4Ne" firstAttribute="top" secondItem="Ddc-6P-1GF" secondAttribute="bottom" id="kNg-Bv-Omm"/>
+                            <constraint firstItem="1XS-hW-lEC" firstAttribute="centerY" secondItem="YLH-Dy-BYe" secondAttribute="centerY" id="mJ9-Nb-S9x"/>
                         </constraints>
                     </view>
                     <connections>
@@ -259,6 +258,6 @@
         <image name="twitterShare.png" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eAO-C4-rWI"/>
+        <segue reference="9V6-AM-gFE"/>
     </inferredMetricsTieBreakers>
 </document>

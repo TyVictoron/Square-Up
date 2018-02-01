@@ -15,28 +15,28 @@ import GoogleMobileAds
 
 class DuelViewController: UIViewController, GADInterstitialDelegate {
     
-    var motionManager = CMMotionManager()
+    @objc var motionManager = CMMotionManager()
 
     @IBOutlet weak var countLabel: UILabel!
     
-    var mcm = MPCManager()
-    var bgm = AVAudioPlayer()
-    var shot = AVAudioPlayer()
-    var draw = AVAudioPlayer()
-    var timer = Timer()
-    var afterFireTimer = Timer()
-    var time = 10
-    var newTime = 0
-    var canShoot = true
-    var duelsWon = 0
-    var dead = false
-    var winLossText = ""
-    var hasShot = false
+    @objc var mcm = MPCManager()
+    @objc var bgm = AVAudioPlayer()
+    @objc var shot = AVAudioPlayer()
+    @objc var draw = AVAudioPlayer()
+    @objc var timer = Timer()
+    @objc var afterFireTimer = Timer()
+    @objc var time = 10
+    @objc var newTime = 0
+    @objc var canShoot = true
+    @objc var duelsWon = 0
+    @objc var dead = false
+    @objc var winLossText = ""
+    @objc var hasShot = false
     
     /// The interstitial ad.
-    var interstitial: GADInterstitial!
+    @objc var interstitial: GADInterstitial!
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @objc let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,10 +92,11 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
                 {
                     //print("shooting position")
                     self.afterFireTimer.invalidate()
-                    //self.appDelegate.mpcManager.sendData(dataToSend: "\(self.newTime)")
+                    self.appDelegate.mpcManager.sendData(dataToSend: "\(self.newTime)")
                     self.hasShot = true
                     
-                    if (self.appDelegate.mpcManager.dead == true) {
+                    // new way using timer to check who raised faster
+                    if (self.appDelegate.mpcManager.recevedTime < self.newTime) {
                         
                         self.winLossText = "You Lost"
                         self.view.backgroundColor = UIColor.red
@@ -118,7 +119,7 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
                             svc.duelsWon = self.duelsWon
                             
                             if self.interstitial.isReady {
-                                self.interstitial.present(fromRootViewController: self)
+                                //self.interstitial.present(fromRootViewController: self)
                             } else {
                                 print("Ad wasn't ready")
                                 self.present(svc, animated: true, completion: nil)
@@ -131,7 +132,7 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
                     } else {
                         
                         self.appDelegate.mpcManager.shot = true
-                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data 
+                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data
                         self.view.backgroundColor = UIColor.green
                         self.winLossText = "You Won!"
                         // shooting stuffs
@@ -156,7 +157,7 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
                             svc.duelsWon = self.duelsWon
                             
                             if self.interstitial.isReady {
-                                self.interstitial.present(fromRootViewController: self)
+                                //self.interstitial.present(fromRootViewController: self)
                             } else {
                                 print("Ad wasn't ready")
                                 self.present(svc, animated: true, completion: nil)
@@ -168,6 +169,81 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
                         
                         
                     }
+                    
+                   ////// Old Way To detect if player has shot or is dead \\\\\\
+//                    if (self.appDelegate.mpcManager.dead == true) {
+//                        
+//                        self.winLossText = "You Lost"
+//                        self.view.backgroundColor = UIColor.red
+//                        
+//                        let defaults: UserDefaults = UserDefaults.standard
+//                        defaults.set(self.duelsWon, forKey: "highScore")
+//                        defaults.synchronize()
+//                        
+//                        let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//                        
+//                        let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
+//                            let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+//                            self.canShoot = true
+//                            self.dead = false
+//                            self.time = 10
+//                            self.appDelegate.mpcManager.shot = false
+//                            self.appDelegate.mpcManager.dead = false
+//                            self.appDelegate.mpcManager.holstered = false
+//                            self.bgm.stop()
+//                            svc.duelsWon = self.duelsWon
+//                            
+//                            if self.interstitial.isReady {
+//                                self.interstitial.present(fromRootViewController: self)
+//                            } else {
+//                                print("Ad wasn't ready")
+//                                self.present(svc, animated: true, completion: nil)
+//                            }
+//                        }
+//                        
+//                        alert.addAction(playAgainAction)
+//                        self.present(alert, animated: true, completion: nil)
+//                        
+//                    } else {
+//                        
+//                        self.appDelegate.mpcManager.shot = true
+//                        self.appDelegate.mpcManager.sendData(dataToSend: "shot") // send data 
+//                        self.view.backgroundColor = UIColor.green
+//                        self.winLossText = "You Won!"
+//                        // shooting stuffs
+//                        self.shot.play()
+//                        self.duelsWon += 1
+//                        
+//                        let defaults: UserDefaults = UserDefaults.standard
+//                        defaults.set(self.duelsWon, forKey: "highScore")
+//                        defaults.synchronize()
+//                        
+//                        let alert = UIAlertController(title: self.winLossText, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//                        
+//                        let playAgainAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (action) -> Void in
+//                            let svc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! ViewController
+//                            self.canShoot = true
+//                            self.dead = false
+//                            self.time = 10
+//                            self.appDelegate.mpcManager.shot = false
+//                            self.appDelegate.mpcManager.dead = false
+//                            self.appDelegate.mpcManager.holstered = false
+//                            self.bgm.stop()
+//                            svc.duelsWon = self.duelsWon
+//                            
+//                            if self.interstitial.isReady {
+//                                self.interstitial.present(fromRootViewController: self)
+//                            } else {
+//                                print("Ad wasn't ready")
+//                                self.present(svc, animated: true, completion: nil)
+//                            }
+//                        }
+//                        
+//                        alert.addAction(playAgainAction)
+//                        self.present(alert, animated: true, completion: nil)
+//                        
+//                        
+//                    }
                     
                 }
                 else if (self.time > 0 && myData.acceleration.y < 0.15 && self.canShoot == false) {
@@ -215,9 +291,9 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
  
     }
     
-    func createAndLoadInterstitial() -> GADInterstitial {
+    @objc func createAndLoadInterstitial() -> GADInterstitial {
         let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        interstitial.delegate = self as? GADInterstitialDelegate
+        //interstitial.delegate = self as? GADInterstitialDelegate
         interstitial.load(GADRequest())
         return interstitial
     }
@@ -228,7 +304,7 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
         self.present(svc, animated: true, completion: nil)
     }
     
-    func update() {
+    @objc func update() {
         time -= 1
         if (time <= 0) {
             //countLabel.text = "FIRE!"
@@ -243,12 +319,12 @@ class DuelViewController: UIViewController, GADInterstitialDelegate {
         //countLabel.text = "\(time)"
     }
     
-    func update2() {
+    @objc func update2() {
         newTime += 1
     }
     
     // Sound setup
-    func setupAudioPlayerWithFile(_ file:NSString, type:NSString) -> AVAudioPlayer  {
+    @objc func setupAudioPlayerWithFile(_ file:NSString, type:NSString) -> AVAudioPlayer  {
         //1
         let path = Bundle.main.path(forResource: file as String, ofType:type as String)
         let url = URL(fileURLWithPath: path!)
